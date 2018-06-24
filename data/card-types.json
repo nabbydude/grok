@@ -1,0 +1,54 @@
+[
+	{
+		"singular": "artifact",
+		"plural": "artifacts"
+	},
+	{
+		"singular": "conspiracy",
+		"plural": "conspiracies"
+	},
+	{
+		"singular": "creature",
+		"plural": "creatures"
+	},
+	{
+		"singular": "enchantment",
+		"plural": "enchantments"
+	},
+	{
+		"singular": "instant",
+		"plural": "instants"
+	},
+	{
+		"singular": "land",
+		"plural": "lands"
+	},
+	{
+		"singular": "phenomenon",
+		"plural": "phenomenons"
+	},
+	{
+		"singular": "plane",
+		"plural": "planes"
+	},
+	{
+		"singular": "planeswalker",
+		"plural": "planeswalkers"
+	},
+	{
+		"singular": "scheme",
+		"plural": "schemes"
+	},
+	{
+		"singular": "sorcery",
+		"plural": "sorceries"
+	},
+	{
+		"singular": "tribal",
+		"plural": "tribals"
+	},
+	{
+		"singular": "vanguard",
+		"plural": "vanguards"
+	}
+]

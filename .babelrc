@@ -1,0 +1,18 @@
+{
+  "env": {
+    "node": "current"
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./bin"
+        ],
+        "alias": {
+          "^@/(.*)": "./bin/\\1"
+        }
+      }
+    ]
+  ]
+}

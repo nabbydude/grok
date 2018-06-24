@@ -1,0 +1,22 @@
+[
+	{
+		"singular": "basic",
+		"plural": "basics"
+	},
+	{
+		"singular": "legendary",
+		"plural": "legendaries"
+	},
+	{
+		"singular": "ongoing",
+		"plural": "ongoings"
+	},
+	{
+		"singular": "snow",
+		"plural": "snows"
+	},
+	{
+		"singular": "world",
+		"plural": "worlds"
+	}
+]

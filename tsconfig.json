@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./bin",
+    "target": "es6",
+    "strict": true,
+    "types": ["node"],
+    "module": "commonjs",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

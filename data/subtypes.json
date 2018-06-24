@@ -1,0 +1,1362 @@
+[
+	{
+		"singular": "Clue",
+		"plural": "Clues"
+	},
+	{
+		"singular": "Contraption",
+		"plural": "Contraptions"
+	},
+	{
+		"singular": "Equipment",
+		"plural": "Equipment"
+	},
+	{
+		"singular": "Fortification",
+		"plural": "Fortifications"
+	},
+	{
+		"singular": "Vehicle",
+		"plural": "Vehicles"
+	},
+	{
+		"singular": "Advisor",
+		"plural": "Advisors"
+	},
+	{
+		"singular": "Aetherborn",
+		"plural": "Aetherborns"
+	},
+	{
+		"singular": "Ally",
+		"plural": "Allies"
+	},
+	{
+		"singular": "Angel",
+		"plural": "Angels"
+	},
+	{
+		"singular": "Antelope",
+		"plural": "Antelopes"
+	},
+	{
+		"singular": "Ape",
+		"plural": "Apes"
+	},
+	{
+		"singular": "Archer",
+		"plural": "Archers"
+	},
+	{
+		"singular": "Archon",
+		"plural": "Archons"
+	},
+	{
+		"singular": "Artificer",
+		"plural": "Artificers"
+	},
+	{
+		"singular": "Assassin",
+		"plural": "Assassins"
+	},
+	{
+		"singular": "Assembly-Worker",
+		"plural": "Assembly-Workers"
+	},
+	{
+		"singular": "Atog",
+		"plural": "Atogs"
+	},
+	{
+		"singular": "Aurochs",
+		"plural": "Aurochs"
+	},
+	{
+		"singular": "Avatar",
+		"plural": "Avatars"
+	},
+	{
+		"singular": "Badger",
+		"plural": "Badgers"
+	},
+	{
+		"singular": "Barbarian",
+		"plural": "Barbarians"
+	},
+	{
+		"singular": "Basilisk",
+		"plural": "Basilisks"
+	},
+	{
+		"singular": "Bat",
+		"plural": "Bats"
+	},
+	{
+		"singular": "Bear",
+		"plural": "Bears"
+	},
+	{
+		"singular": "Beast",
+		"plural": "Beasts"
+	},
+	{
+		"singular": "Beeble",
+		"plural": "Beebles"
+	},
+	{
+		"singular": "Berserker",
+		"plural": "Berserkers"
+	},
+	{
+		"singular": "Bird",
+		"plural": "Birds"
+	},
+	{
+		"singular": "Blinkmoth",
+		"plural": "Blinkmoths"
+	},
+	{
+		"singular": "Boar",
+		"plural": "Boars"
+	},
+	{
+		"singular": "Bringer",
+		"plural": "Bringers"
+	},
+	{
+		"singular": "Brushwagg",
+		"plural": "Brushwaggs"
+	},
+	{
+		"singular": "Camarid",
+		"plural": "Camarids"
+	},
+	{
+		"singular": "Camel",
+		"plural": "Camels"
+	},
+	{
+		"singular": "Caribou",
+		"plural": "Caribou"
+	},
+	{
+		"singular": "Carrier",
+		"plural": "Carriers"
+	},
+	{
+		"singular": "Cat",
+		"plural": "Cats"
+	},
+	{
+		"singular": "Centaur",
+		"plural": "Centaurs"
+	},
+	{
+		"singular": "Cephalid",
+		"plural": "Cephalids"
+	},
+	{
+		"singular": "Chimera",
+		"plural": "Chimeras"
+	},
+	{
+		"singular": "Citizen",
+		"plural": "Citizens"
+	},
+	{
+		"singular": "Cleric",
+		"plural": "Clerics"
+	},
+	{
+		"singular": "Cockatrice",
+		"plural": "Cockatrices"
+	},
+	{
+		"singular": "Construct",
+		"plural": "Constructs"
+	},
+	{
+		"singular": "Coward",
+		"plural": "Cowards"
+	},
+	{
+		"singular": "Crab",
+		"plural": "Crabs"
+	},
+	{
+		"singular": "Crocodile",
+		"plural": "Crocodiles"
+	},
+	{
+		"singular": "Cyclops",
+		"plural": "Cyclopes"
+	},
+	{
+		"singular": "Dauthi",
+		"plural": "Dauthi"
+	},
+	{
+		"singular": "Demon",
+		"plural": "Demons"
+	},
+	{
+		"singular": "Deserter",
+		"plural": "Deserters"
+	},
+	{
+		"singular": "Devil",
+		"plural": "Devils"
+	},
+	{
+		"singular": "Dinosaur",
+		"plural": "Dinosaurs"
+	},
+	{
+		"singular": "Djinn",
+		"plural": "Djinns"
+	},
+	{
+		"singular": "Dragon",
+		"plural": "Dragons"
+	},
+	{
+		"singular": "Drake",
+		"plural": "Drakes"
+	},
+	{
+		"singular": "Dreadnought",
+		"plural": "Dreadnoughts"
+	},
+	{
+		"singular": "Drone",
+		"plural": "Drones"
+	},
+	{
+		"singular": "Druid",
+		"plural": "Druids"
+	},
+	{
+		"singular": "Dryad",
+		"plural": "Dryads"
+	},
+	{
+		"singular": "Dwarf",
+		"plural": "Dwarfs"
+	},
+	{
+		"singular": "Efreet",
+		"plural": "Efreets"
+	},
+	{
+		"singular": "Elder",
+		"plural": "Elders"
+	},
+	{
+		"singular": "Eldrazi",
+		"plural": "Eldrazis"
+	},
+	{
+		"singular": "Elemental",
+		"plural": "Elementals"
+	},
+	{
+		"singular": "Elephant",
+		"plural": "Elephants"
+	},
+	{
+		"singular": "Elf",
+		"plural": "Elves"
+	},
+	{
+		"singular": "Elk",
+		"plural": "Elks"
+	},
+	{
+		"singular": "Eye",
+		"plural": "Eyes"
+	},
+	{
+		"singular": "Faerie",
+		"plural": "Faeries"
+	},
+	{
+		"singular": "Ferret",
+		"plural": "Ferrets"
+	},
+	{
+		"singular": "Fish",
+		"plural": "Fish"
+	},
+	{
+		"singular": "Flagbearer",
+		"plural": "Flagbearers"
+	},
+	{
+		"singular": "Fox",
+		"plural": "Foxes"
+	},
+	{
+		"singular": "Frog",
+		"plural": "Frogs"
+	},
+	{
+		"singular": "Fungus",
+		"plural": "Fungi"
+	},
+	{
+		"singular": "Gargoyle",
+		"plural": "Gargoyles"
+	},
+	{
+		"singular": "Germ",
+		"plural": "Germs"
+	},
+	{
+		"singular": "Giant",
+		"plural": "Giants"
+	},
+	{
+		"singular": "Gnome",
+		"plural": "Gnomes"
+	},
+	{
+		"singular": "Goat",
+		"plural": "Goats"
+	},
+	{
+		"singular": "Goblin",
+		"plural": "Goblins"
+	},
+	{
+		"singular": "God",
+		"plural": "Gods"
+	},
+	{
+		"singular": "Golem",
+		"plural": "Golems"
+	},
+	{
+		"singular": "Gorgon",
+		"plural": "Gorgons"
+	},
+	{
+		"singular": "Graveborn",
+		"plural": "Graveborns"
+	},
+	{
+		"singular": "Gremlin",
+		"plural": "Gremlins"
+	},
+	{
+		"singular": "Griffin",
+		"plural": "Griffins"
+	},
+	{
+		"singular": "Hag",
+		"plural": "Hags"
+	},
+	{
+		"singular": "Harpy",
+		"plural": "Harpies"
+	},
+	{
+		"singular": "Hellion",
+		"plural": "Hellions"
+	},
+	{
+		"singular": "Hippo",
+		"plural": "Hippos"
+	},
+	{
+		"singular": "Hippogriff",
+		"plural": "Hippogriffs"
+	},
+	{
+		"singular": "Homarid",
+		"plural": "Homarids"
+	},
+	{
+		"singular": "Homunculus",
+		"plural": "Homunculi"
+	},
+	{
+		"singular": "Horror",
+		"plural": "Horrors"
+	},
+	{
+		"singular": "Horse",
+		"plural": "Horses"
+	},
+	{
+		"singular": "Hound",
+		"plural": "Hounds"
+	},
+	{
+		"singular": "Human",
+		"plural": "Humans"
+	},
+	{
+		"singular": "Hydra",
+		"plural": "Hydras"
+	},
+	{
+		"singular": "Hyena",
+		"plural": "Hyenas"
+	},
+	{
+		"singular": "Illusion",
+		"plural": "Illusions"
+	},
+	{
+		"singular": "Imp",
+		"plural": "Imps"
+	},
+	{
+		"singular": "Incarnation",
+		"plural": "Incarnations"
+	},
+	{
+		"singular": "Insect",
+		"plural": "Insects"
+	},
+	{
+		"singular": "Jackal",
+		"plural": "Jackals"
+	},
+	{
+		"singular": "Jellyfish",
+		"plural": "Jellyfish"
+	},
+	{
+		"singular": "Juggernaut",
+		"plural": "Juggernauts"
+	},
+	{
+		"singular": "Kavu",
+		"plural": "Kavu"
+	},
+	{
+		"singular": "Kirin",
+		"plural": "Kirin"
+	},
+	{
+		"singular": "Kithkin",
+		"plural": "Kithkins"
+	},
+	{
+		"singular": "Knight",
+		"plural": "Knights"
+	},
+	{
+		"singular": "Kobold",
+		"plural": "Kobolds"
+	},
+	{
+		"singular": "Kor",
+		"plural": "Kor"
+	},
+	{
+		"singular": "Kraken",
+		"plural": "Krakens"
+	},
+	{
+		"singular": "Lamia",
+		"plural": "Lamias"
+	},
+	{
+		"singular": "Lammasu",
+		"plural": "Lammasu"
+	},
+	{
+		"singular": "Leech",
+		"plural": "Leeches"
+	},
+	{
+		"singular": "Leviathan",
+		"plural": "Leviathans"
+	},
+	{
+		"singular": "Lhurgoyf",
+		"plural": "Lhurgoyfs"
+	},
+	{
+		"singular": "Licid",
+		"plural": "Licids"
+	},
+	{
+		"singular": "Lizard",
+		"plural": "Lizards"
+	},
+	{
+		"singular": "Manticore",
+		"plural": "Manticores"
+	},
+	{
+		"singular": "Masticore",
+		"plural": "Masticores"
+	},
+	{
+		"singular": "Mercenary",
+		"plural": "Mercenaries"
+	},
+	{
+		"singular": "Merfolk",
+		"plural": "Merfolk"
+	},
+	{
+		"singular": "Metathran",
+		"plural": "Metathrans"
+	},
+	{
+		"singular": "Minion",
+		"plural": "Minions"
+	},
+	{
+		"singular": "Minotaur",
+		"plural": "Minotaurs"
+	},
+	{
+		"singular": "Mole",
+		"plural": "Moles"
+	},
+	{
+		"singular": "Monger",
+		"plural": "Mongers"
+	},
+	{
+		"singular": "Mongoose",
+		"plural": "Mongooses"
+	},
+	{
+		"singular": "Monk",
+		"plural": "Monks"
+	},
+	{
+		"singular": "Monkey",
+		"plural": "Monkeys"
+	},
+	{
+		"singular": "Moonfolk",
+		"plural": "Moonfolk"
+	},
+	{
+		"singular": "Mutant",
+		"plural": "Mutants"
+	},
+	{
+		"singular": "Myr",
+		"plural": "Myrs"
+	},
+	{
+		"singular": "Mystic",
+		"plural": "Mystics"
+	},
+	{
+		"singular": "Naga",
+		"plural": "Nagas"
+	},
+	{
+		"singular": "Nautilus",
+		"plural": "Nautiluses"
+	},
+	{
+		"singular": "Nephilim",
+		"plural": "Nephilims"
+	},
+	{
+		"singular": "Nightmare",
+		"plural": "Nightmares"
+	},
+	{
+		"singular": "Nightstalker",
+		"plural": "Nightstalkers"
+	},
+	{
+		"singular": "Ninja",
+		"plural": "Ninjas"
+	},
+	{
+		"singular": "Noggle",
+		"plural": "Noggles"
+	},
+	{
+		"singular": "Nomad",
+		"plural": "Nomads"
+	},
+	{
+		"singular": "Nymph",
+		"plural": "Nymphs"
+	},
+	{
+		"singular": "Octopus",
+		"plural": "Octopuses"
+	},
+	{
+		"singular": "Ogre",
+		"plural": "Ogres"
+	},
+	{
+		"singular": "Ooze",
+		"plural": "Oozes"
+	},
+	{
+		"singular": "Orb",
+		"plural": "Orbs"
+	},
+	{
+		"singular": "Orc",
+		"plural": "Orcs"
+	},
+	{
+		"singular": "Orgg",
+		"plural": "Orggs"
+	},
+	{
+		"singular": "Ouphe",
+		"plural": "Ouphes"
+	},
+	{
+		"singular": "Ox",
+		"plural": "Oxes"
+	},
+	{
+		"singular": "Oyster",
+		"plural": "Oysters"
+	},
+	{
+		"singular": "Pegasus",
+		"plural": "Pegasuses"
+	},
+	{
+		"singular": "Pentavite",
+		"plural": "Pentavites"
+	},
+	{
+		"singular": "Pest",
+		"plural": "Pests"
+	},
+	{
+		"singular": "Phelddagrif",
+		"plural": "Phelddagrifs"
+	},
+	{
+		"singular": "Phoenix",
+		"plural": "Phoenixes"
+	},
+	{
+		"singular": "Pilot",
+		"plural": "Pilots"
+	},
+	{
+		"singular": "Pincher",
+		"plural": "Pinchers"
+	},
+	{
+		"singular": "Pirate",
+		"plural": "Pirates"
+	},
+	{
+		"singular": "Plant",
+		"plural": "Plants"
+	},
+	{
+		"singular": "Praetor",
+		"plural": "Praetors"
+	},
+	{
+		"singular": "Prism",
+		"plural": "Prisms"
+	},
+	{
+		"singular": "Processor",
+		"plural": "Processors"
+	},
+	{
+		"singular": "Rabbit",
+		"plural": "Rabbits"
+	},
+	{
+		"singular": "Rat",
+		"plural": "Rats"
+	},
+	{
+		"singular": "Rebel",
+		"plural": "Rebels"
+	},
+	{
+		"singular": "Reflection",
+		"plural": "Reflections"
+	},
+	{
+		"singular": "Rhino",
+		"plural": "Rhinos"
+	},
+	{
+		"singular": "Rigger",
+		"plural": "Riggers"
+	},
+	{
+		"singular": "Rogue",
+		"plural": "Rogues"
+	},
+	{
+		"singular": "Sable",
+		"plural": "Sables"
+	},
+	{
+		"singular": "Salamander",
+		"plural": "Salamanders"
+	},
+	{
+		"singular": "Samurai",
+		"plural": "Samurai"
+	},
+	{
+		"singular": "Sand",
+		"plural": "Sands"
+	},
+	{
+		"singular": "Saproling",
+		"plural": "Saprolings"
+	},
+	{
+		"singular": "Satyr",
+		"plural": "Satyrs"
+	},
+	{
+		"singular": "Scarecrow",
+		"plural": "Scarecrows"
+	},
+	{
+		"singular": "Scion",
+		"plural": "Scions"
+	},
+	{
+		"singular": "Scorpion",
+		"plural": "Scorpions"
+	},
+	{
+		"singular": "Scout",
+		"plural": "Scouts"
+	},
+	{
+		"singular": "Serf",
+		"plural": "Serfs"
+	},
+	{
+		"singular": "Serpent",
+		"plural": "Serpents"
+	},
+	{
+		"singular": "Servo",
+		"plural": "Servos"
+	},
+	{
+		"singular": "Shade",
+		"plural": "Shades"
+	},
+	{
+		"singular": "Shaman",
+		"plural": "Shamans"
+	},
+	{
+		"singular": "Shapeshifter",
+		"plural": "Shapeshifters"
+	},
+	{
+		"singular": "Sheep",
+		"plural": "Sheep"
+	},
+	{
+		"singular": "Siren",
+		"plural": "Sirens"
+	},
+	{
+		"singular": "Skeleton",
+		"plural": "Skeletons"
+	},
+	{
+		"singular": "Slith",
+		"plural": "Slith"
+	},
+	{
+		"singular": "Sliver",
+		"plural": "Slivers"
+	},
+	{
+		"singular": "Slug",
+		"plural": "Slugs"
+	},
+	{
+		"singular": "Snake",
+		"plural": "Snakes"
+	},
+	{
+		"singular": "Soldier",
+		"plural": "Soldiers"
+	},
+	{
+		"singular": "Soltari",
+		"plural": "Soltari"
+	},
+	{
+		"singular": "Spawn",
+		"plural": "Spawns"
+	},
+	{
+		"singular": "Specter",
+		"plural": "Specters"
+	},
+	{
+		"singular": "Spellshaper",
+		"plural": "Spellshapers"
+	},
+	{
+		"singular": "Sphinx",
+		"plural": "Sphinxes"
+	},
+	{
+		"singular": "Spider",
+		"plural": "Spiders"
+	},
+	{
+		"singular": "Spike",
+		"plural": "Spikes"
+	},
+	{
+		"singular": "Spirit",
+		"plural": "Spirits"
+	},
+	{
+		"singular": "Splinter",
+		"plural": "Splinters"
+	},
+	{
+		"singular": "Sponge",
+		"plural": "Sponges"
+	},
+	{
+		"singular": "Squid",
+		"plural": "Squids"
+	},
+	{
+		"singular": "Squirrel",
+		"plural": "Squirrels"
+	},
+	{
+		"singular": "Starfish",
+		"plural": "Starfish"
+	},
+	{
+		"singular": "Surrakar",
+		"plural": "Surrakar"
+	},
+	{
+		"singular": "Survivor",
+		"plural": "Survivors"
+	},
+	{
+		"singular": "Tetravite",
+		"plural": "Tetravites"
+	},
+	{
+		"singular": "Thalakos",
+		"plural": "Thalakos"
+	},
+	{
+		"singular": "Thopter",
+		"plural": "Thopters"
+	},
+	{
+		"singular": "Thrull",
+		"plural": "Thrulls"
+	},
+	{
+		"singular": "Treefolk",
+		"plural": "Treefolk"
+	},
+	{
+		"singular": "Triskelavite",
+		"plural": "Triskelavites"
+	},
+	{
+		"singular": "Troll",
+		"plural": "Trolls"
+	},
+	{
+		"singular": "Turtle",
+		"plural": "Turtles"
+	},
+	{
+		"singular": "Unicorn",
+		"plural": "Unicorns"
+	},
+	{
+		"singular": "Vampire",
+		"plural": "Vampires"
+	},
+	{
+		"singular": "Vedalken",
+		"plural": "Vedalken"
+	},
+	{
+		"singular": "Viashino",
+		"plural": "Viashino"
+	},
+	{
+		"singular": "Volver",
+		"plural": "Volvers"
+	},
+	{
+		"singular": "Wall",
+		"plural": "Walls"
+	},
+	{
+		"singular": "Warrior",
+		"plural": "Warriors"
+	},
+	{
+		"singular": "Weird",
+		"plural": "Weirds"
+	},
+	{
+		"singular": "Werewolf",
+		"plural": "Werewolves"
+	},
+	{
+		"singular": "Whale",
+		"plural": "Whales"
+	},
+	{
+		"singular": "Wizard",
+		"plural": "Wizards"
+	},
+	{
+		"singular": "Wolf",
+		"plural": "Wolves"
+	},
+	{
+		"singular": "Wolverine",
+		"plural": "Wolverines"
+	},
+	{
+		"singular": "Wombat",
+		"plural": "Wombats"
+	},
+	{
+		"singular": "Worm",
+		"plural": "Worms"
+	},
+	{
+		"singular": "Wraith",
+		"plural": "Wraiths"
+	},
+	{
+		"singular": "Wurm",
+		"plural": "Wurms"
+	},
+	{
+		"singular": "Yeti",
+		"plural": "Yetis"
+	},
+	{
+		"singular": "Zombie",
+		"plural": "Zombies"
+	},
+	{
+		"singular": "Zubera",
+		"plural": "Zubera"
+	},
+	{
+		"singular": "Aura",
+		"plural": "Auras"
+	},
+	{
+		"singular": "Cartouche",
+		"plural": "Cartouches"
+	},
+	{
+		"singular": "Curse",
+		"plural": "Curses"
+	},
+	{
+		"singular": "Shrine.",
+		"plural": "Shrines"
+	},
+	{
+		"singular": "Plains",
+		"plural": "Plains"
+	},
+	{
+		"singular": "Island",
+		"plural": "Islands"
+	},
+	{
+		"singular": "Swamp",
+		"plural": "Swamps"
+	},
+	{
+		"singular": "Mountain",
+		"plural": "Mountains"
+	},
+	{
+		"singular": "Forest",
+		"plural": "Forests"
+	},
+	{
+		"singular": "Desert",
+		"plural": "Deserts"
+	},
+	{
+		"singular": "Gate",
+		"plural": "Gates"
+	},
+	{
+		"singular": "Lair",
+		"plural": "Lairs"
+	},
+	{
+		"singular": "Locus",
+		"plural": "Locuses"
+	},
+	{
+		"singular": "Urza's",
+		"plural": "Urza's"
+	},
+	{
+		"singular": "Mine",
+		"plural": "Mines"
+	},
+	{
+		"singular": "Power-Plant",
+		"plural": "Power-Plants"
+	},
+	{
+		"singular": "Tower",
+		"plural": "Towers"
+	},
+	{
+		"singular": "Alara",
+		"plural": "Alara"
+	},
+	{
+		"singular": "Arkhos",
+		"plural": "Arkhos"
+	},
+	{
+		"singular": "Azgol",
+		"plural": "Azgol"
+	},
+	{
+		"singular": "Belenon",
+		"plural": "Belenon"
+	},
+	{
+		"singular": "Bolas's Meditation Realm",
+		"plural": "Bolas's Meditation Realm"
+	},
+	{
+		"singular": "Dominaria",
+		"plural": "Dominaria"
+	},
+	{
+		"singular": "Equilor",
+		"plural": "Equilor"
+	},
+	{
+		"singular": "Ergamon",
+		"plural": "Ergamon"
+	},
+	{
+		"singular": "Fabacin",
+		"plural": "Fabacin"
+	},
+	{
+		"singular": "Innistrad",
+		"plural": "Innistrad"
+	},
+	{
+		"singular": "Iquatana",
+		"plural": "Iquatana"
+	},
+	{
+		"singular": "Ir",
+		"plural": "Ir"
+	},
+	{
+		"singular": "Kaldheim",
+		"plural": "Kaldheim"
+	},
+	{
+		"singular": "Kamigawa",
+		"plural": "Kamigawa"
+	},
+	{
+		"singular": "Karsus",
+		"plural": "Karsus"
+	},
+	{
+		"singular": "Kephalai",
+		"plural": "Kephalai"
+	},
+	{
+		"singular": "Kinshala",
+		"plural": "Kinshala"
+	},
+	{
+		"singular": "Kolbahan",
+		"plural": "Kolbahan"
+	},
+	{
+		"singular": "Kyneth",
+		"plural": "Kyneth"
+	},
+	{
+		"singular": "Lorwyn",
+		"plural": "Lorwyn"
+	},
+	{
+		"singular": "Luvion",
+		"plural": "Luvion"
+	},
+	{
+		"singular": "Mercadia",
+		"plural": "Mercadia"
+	},
+	{
+		"singular": "Mirrodin",
+		"plural": "Mirrodin"
+	},
+	{
+		"singular": "Moag",
+		"plural": "Moag"
+	},
+	{
+		"singular": "Mongseng",
+		"plural": "Mongseng"
+	},
+	{
+		"singular": "Muraganda",
+		"plural": "Muraganda"
+	},
+	{
+		"singular": "New Phyrexia",
+		"plural": "New Phyrexia"
+	},
+	{
+		"singular": "Phyrexia",
+		"plural": "Phyrexia"
+	},
+	{
+		"singular": "Pyrulea",
+		"plural": "Pyrulea"
+	},
+	{
+		"singular": "Rabiah",
+		"plural": "Rabiah"
+	},
+	{
+		"singular": "Rath",
+		"plural": "Rath"
+	},
+	{
+		"singular": "Ravnica",
+		"plural": "Ravnica"
+	},
+	{
+		"singular": "Regatha",
+		"plural": "Regatha"
+	},
+	{
+		"singular": "Segovia",
+		"plural": "Segovia"
+	},
+	{
+		"singular": "Serra's Realm",
+		"plural": "Serra's Realm"
+	},
+	{
+		"singular": "Shadowmoor",
+		"plural": "Shadowmoor"
+	},
+	{
+		"singular": "Shandalar",
+		"plural": "Shandalar"
+	},
+	{
+		"singular": "Ulgrotha",
+		"plural": "Ulgrotha"
+	},
+	{
+		"singular": "Valla",
+		"plural": "Valla"
+	},
+	{
+		"singular": "Vryn",
+		"plural": "Vryn"
+	},
+	{
+		"singular": "Wildfire",
+		"plural": "Wildfire"
+	},
+	{
+		"singular": "Xerex",
+		"plural": "Xerex"
+	},
+	{
+		"singular": "Zendikar",
+		"plural": "Zendikar"
+	},
+	{
+		"singular": "Ajani",
+		"plural": "Ajanis"
+	},
+	{
+		"singular": "Arlinn",
+		"plural": "Arlinns"
+	},
+	{
+		"singular": "Ashiok",
+		"plural": "Ashioks"
+	},
+	{
+		"singular": "Bolas",
+		"plural": "Bolases"
+	},
+	{
+		"singular": "Chandra",
+		"plural": "Chandras"
+	},
+	{
+		"singular": "Dack",
+		"plural": "Dacks"
+	},
+	{
+		"singular": "Daretti",
+		"plural": "Darettis"
+	},
+	{
+		"singular": "Domri",
+		"plural": "Domris"
+	},
+	{
+		"singular": "Dovin",
+		"plural": "Dovins"
+	},
+	{
+		"singular": "Elspeth",
+		"plural": "Elspeths"
+	},
+	{
+		"singular": "Freyalise",
+		"plural": "Freyalises"
+	},
+	{
+		"singular": "Garruk",
+		"plural": "Garruks"
+	},
+	{
+		"singular": "Gideon",
+		"plural": "Gideons"
+	},
+	{
+		"singular": "Jace",
+		"plural": "Jaces"
+	},
+	{
+		"singular": "Karn",
+		"plural": "Karns"
+	},
+	{
+		"singular": "Kaya",
+		"plural": "Kayas"
+	},
+	{
+		"singular": "Kiora",
+		"plural": "Kioras"
+	},
+	{
+		"singular": "Koth",
+		"plural": "Koths"
+	},
+	{
+		"singular": "Liliana",
+		"plural": "Lilianas"
+	},
+	{
+		"singular": "Nahiri",
+		"plural": "Nahiris"
+	},
+	{
+		"singular": "Nissa",
+		"plural": "Nissas"
+	},
+	{
+		"singular": "Narset",
+		"plural": "Narsets"
+	},
+	{
+		"singular": "Nixilis",
+		"plural": "Nixilises"
+	},
+	{
+		"singular": "Ral",
+		"plural": "Rals"
+	},
+	{
+		"singular": "Saheeli",
+		"plural": "Saheelis"
+	},
+	{
+		"singular": "Samut",
+		"plural": "Samuts"
+	},
+	{
+		"singular": "Sarkhan",
+		"plural": "Sarkhans"
+	},
+	{
+		"singular": "Sorin",
+		"plural": "Sorins"
+	},
+	{
+		"singular": "Tamiyo",
+		"plural": "Tamiyos"
+	},
+	{
+		"singular": "Teferi",
+		"plural": "Teferis"
+	},
+	{
+		"singular": "Tezzeret",
+		"plural": "Tezzerets"
+	},
+	{
+		"singular": "Tibalt",
+		"plural": "Tibalts"
+	},
+	{
+		"singular": "Ugin",
+		"plural": "Ugins"
+	},
+	{
+		"singular": "Venser",
+		"plural": "Vensers"
+	},
+	{
+		"singular": "Vraska",
+		"plural": "Vraskas"
+	},
+	{
+		"singular": "Xenagos",
+		"plural": "Xenagoses"
+	},
+	{
+		"singular": "Arcane",
+		"plural": "Arcanes"
+	},
+	{
+		"singular": "Trap",
+		"plural": "Traps"
+	}
+]
