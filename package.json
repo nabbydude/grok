@@ -16,5 +16,5 @@
     "start": "node ./bin/index"
   },
   "author": "Nabbydude",
-  "license": "ISC"
+  "license": "MIT"
 }
