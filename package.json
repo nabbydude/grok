@@ -1,8 +1,8 @@
 {
-  "name": "mtg-card-parser",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "grok-parser",
+  "version": "0.1.0",
+  "description": "An app for parsing Magic: The Gathering® rules text into an abstract syntax tree of card characteristics and game actions.",
+  "main": "./bin/index.js",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^9.6.22",
@@ -15,6 +15,6 @@
     "build": "npx tsc && npx babel bin --out-dir bin",
     "start": "node ./bin/index"
   },
-  "author": "Nabbydude",
+  "author": "Riley Froude <nabbydude@gmail.com> (https://github.com/nabbydude)",
   "license": "MIT"
 }
