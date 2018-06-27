@@ -24,7 +24,7 @@ interface CallableReader {
 interface Reader extends CallableReader {
   anyOf<T>(...patterns: Pattern<T>[]): AnyOfPattern<T>;
   list<T>(
-    pattern: Pattern<T>[],
+    patterns: Pattern<T>[],
     separator: Pattern,
     lastSeparator?: Pattern
   ): ListPattern<T>;
