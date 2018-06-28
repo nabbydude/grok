@@ -22,11 +22,9 @@ export const parseCondition = r.anyOf<Condition>(
     operator: ">=",
     value: { type: "constant", value: 0 }
   }),
-  r.many(parseValue, r`, `, r`,? or `).as(
-    values => values.length > 1 ? (
-      <InCondition>{ operator: "in", values }
-    ) : (
-      <ComparisonCondition>{ operator: "=", value: values[0] }
-    )
+  r.many(parseValue, r`, `, r`,? or `).onlyIf(
+    values => values.length > 1
+  ).as(
+    values => <InCondition>{ operator: "in", values }
   )
 );
