@@ -1,7 +1,9 @@
 import { r } from "@/r";
 
-import { EverythingScope } from "@/types/scope";
+import { AndScope, Scope } from "@/types/scope";
 
-export const parseScope = r`^\\b$`.as(
-  _ => <EverythingScope>{ type: "everything" }
+import { parseEverythingScope } from "@/branches/scope/everything";
+
+export const parseScope = r.anyOf<Scope>(
+  parseEverythingScope
 );

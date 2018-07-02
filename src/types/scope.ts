@@ -19,7 +19,13 @@ export interface TargetScope extends ScopeBase {
   scope: Scope;
 }
 
+export interface AndScope extends ScopeBase {
+  type: "and";
+  scopes: Scope[];
+}
+
 export type Scope = (
+  AndScope        |
   EverythingScope |
   AllObjectScope  |
   TargetScope

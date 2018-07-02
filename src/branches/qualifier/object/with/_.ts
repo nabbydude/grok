@@ -6,12 +6,12 @@ import { parseAttributeWithObjectQualifier } from "./attribute";
 import { parseCounterWithObjectQualifier   } from "./counter";
 import { parseKeywordWithObjectQualifier   } from "./keyword";
 
-export const parseWithObjectQualifier = r`with ${r.many(
-  r.anyOf<ObjectQualifier>(
+export const parseWithObjectQualifier = r`with ${r.list<ObjectQualifier>(
+  [
     parseAttributeWithObjectQualifier,
     parseCounterWithObjectQualifier,
-    parseKeywordWithObjectQualifier,
-  ),
+    parseKeywordWithObjectQualifier
+  ],
   r`, `,
   r`,? and `
 )}`.as(([qualifiers]) => qualifiers);
