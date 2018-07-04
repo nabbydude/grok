@@ -1,6 +1,6 @@
 import { r } from "@/r";
 
-import { HasCardTypeObjectQualifier, IsAbilityObjectQualifier, IsSpellObjectQualifier, OrObjectQualifier } from "@/types/object-qualifier";
+import { HasCardTypeObjectQualifier, IsAbilityObjectQualifier, IsCardObjectQualifier, IsSpellObjectQualifier, ObjectQualifier, OrObjectQualifier } from "@/types/object-qualifier";
 
 export const parseColorsObjectQualifier = r.anyOf(
   r`spells?`.as(_ => <IsSpellObjectQualifier>{ type: "isSpell" }),
@@ -31,5 +31,5 @@ export const parseColorsObjectQualifier = r.anyOf(
   }),
   r`permanents?`.as(_ => <{}>{ type: "inZone", zone: { type: "battlefield" } }),
   r`abilit(y|ies)`.as(_ => <IsAbilityObjectQualifier>{ type: "isAbility" }),
-  r`cards?`.as(_ => undefined)
+  r`cards?`.as(_ => <IsCardObjectQualifier>{ type: "isCard" })
 );

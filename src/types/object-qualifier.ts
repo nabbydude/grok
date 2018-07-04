@@ -67,6 +67,10 @@ export interface IsAbilityObjectQualifier extends ObjectQualifierBase {
   type: "isAbility";
 }
 
+export interface IsCardObjectQualifier extends ObjectQualifierBase {
+  type: "isCard";
+}
+
 export interface OwnedByObjectQualifier extends ObjectQualifierBase {
   type: "ownedBy";
   scope: Scope;
@@ -118,5 +122,6 @@ export type ObjectQualifier = (
   CounterObjectQualifier      |
   OrObjectQualifier           |
   AndObjectQualifier          |
-  NotObjectQualifier
+  NotObjectQualifier          |
+  IsCardObjectQualifier
 );
