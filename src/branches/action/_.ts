@@ -32,6 +32,5 @@ export const parseAction = r.anyOf<Action>(
   parseProliferateAction,
   parseScryAction,
   parseSupportAction,
-  
   parseScopedAction
 );
