@@ -2,9 +2,9 @@ import { Pattern, r } from "@/r";
 
 import { ObjectQualifier } from "@/types/object-qualifier";
 
-import { parseAttributeWithObjectQualifier } from "./attribute";
-import { parseCounterWithObjectQualifier   } from "./counter";
-import { parseKeywordWithObjectQualifier   } from "./keyword";
+import { parseAttributeWithObjectQualifier } from "@/branches/qualifier/object/with/attribute";
+import { parseCounterWithObjectQualifier   } from "@/branches/qualifier/object/with/counter";
+import { parseKeywordWithObjectQualifier   } from "@/branches/qualifier/object/with/keyword";
 
 export const parseWithObjectQualifier: Pattern<ObjectQualifier[]> = (
   r`with ${r.list<ObjectQualifier>(

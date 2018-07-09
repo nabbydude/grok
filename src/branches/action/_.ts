@@ -2,21 +2,20 @@ import { Pattern, r } from "@/r";
 
 import { Action } from "@/types/action";
 
-import { parseAttachAction      } from "./attach";
-import { parseBolsterAction     } from "./bolster";
-import { parseDamageAction      } from "./damage";
-import { parseDrawAction        } from "./draw";
-import { parseFatesealAction    } from "./fateseal";
-import { parseGainLifeAction    } from "./gain-life";
-import { parseInvestigateAction } from "./investigate";
-import { parseLoseLifeAction    } from "./lose-life";
-import { parseMonstrosityAction } from "./monstrosity";
-import { parsePopulateAction    } from "./populate";
-import { parseProliferateAction } from "./proliferate";
-import { parseScryAction        } from "./scry";
-import { parseSupportAction     } from "./support";
-
-import { parseScopedAction      } from "./scoped";
+import { parseAttachAction      } from "@/branches/action/attach";
+import { parseBolsterAction     } from "@/branches/action/bolster";
+import { parseDamageAction      } from "@/branches/action/damage";
+import { parseDrawAction        } from "@/branches/action/draw";
+import { parseFatesealAction    } from "@/branches/action/fateseal";
+import { parseGainLifeAction    } from "@/branches/action/gain-life";
+import { parseInvestigateAction } from "@/branches/action/investigate";
+import { parseLoseLifeAction    } from "@/branches/action/lose-life";
+import { parseMonstrosityAction } from "@/branches/action/monstrosity";
+import { parsePopulateAction    } from "@/branches/action/populate";
+import { parseProliferateAction } from "@/branches/action/proliferate";
+import { parseScopedAction      } from "@/branches/action/scoped";
+import { parseScryAction        } from "@/branches/action/scry";
+import { parseSupportAction     } from "@/branches/action/support";
 
 export const parseAction: Pattern<Action> = r.anyOf<Action>(
   parseAttachAction,
