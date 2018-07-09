@@ -1,4 +1,4 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { StaticAbility } from "@/types/ability";
 

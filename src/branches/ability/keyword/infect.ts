@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { InfectKeywordAbility } from "@/types/ability";
 
-export const parseInfectKeywordAbility = r`infect`.as(
-  _ => <InfectKeywordAbility>{ type: "keyword", keyword: "infect" }
+export const parseInfectKeywordAbility: Pattern<InfectKeywordAbility> = (
+  r`infect`.as(
+    _ => <InfectKeywordAbility>{ type: "keyword", keyword: "infect" }
+  )
 );

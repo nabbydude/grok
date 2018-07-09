@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { AttachAction } from "@/types/action";
 
 import { parseScope } from "@/branches/scope/_";
 
-export const parseAttachAction = r`attach(es)? ${
+export const parseAttachAction: Pattern<AttachAction> = r`attach(es)? ${
   parseScope
 } to ${
   parseScope

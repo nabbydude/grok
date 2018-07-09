@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ShadowKeywordAbility } from "@/types/ability";
 
-export const parseShadowKeywordAbility = r`shadow`.as(
-  _ => <ShadowKeywordAbility>{ type: "keyword", keyword: "shadow" }
+export const parseShadowKeywordAbility: Pattern<ShadowKeywordAbility> = (
+  r`shadow`.as(
+    _ => <ShadowKeywordAbility>{ type: "keyword", keyword: "shadow" }
+  )
 );

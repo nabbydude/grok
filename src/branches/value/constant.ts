@@ -1,4 +1,4 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ConstantValue } from "@/types/value";
 
@@ -37,7 +37,7 @@ const TENS = [
   "ninety"
 ];
 
-export const parseConstantValue = r.anyOf(
+export const parseConstantValue: Pattern<ConstantValue> = r.anyOf(
   r`an?`.as(_ => <ConstantValue>{ type: "constant", value: 1 }),
   r.reg(/\d+/).as(([digit]) => <ConstantValue>{
     type: "constant",

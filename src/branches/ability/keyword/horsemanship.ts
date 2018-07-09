@@ -1,7 +1,12 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { HorsemanshipKeywordAbility } from "@/types/ability";
 
-export const parseHorsemanshipKeywordAbility = r`horsemanship`.as(
-  _ => <HorsemanshipKeywordAbility>{ type: "keyword", keyword: "horsemanship" }
+export const parseHorsemanshipKeywordAbility: (
+  Pattern<HorsemanshipKeywordAbility>
+) = (
+  r`horsemanship`.as(_ => <HorsemanshipKeywordAbility>{
+    type: "keyword",
+    keyword: "horsemanship"
+  })
 );

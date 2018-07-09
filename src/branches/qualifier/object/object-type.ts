@@ -1,8 +1,8 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { HasCardTypeObjectQualifier, IsAbilityObjectQualifier, IsCardObjectQualifier, IsSpellObjectQualifier, ObjectQualifier, OrObjectQualifier } from "@/types/object-qualifier";
 
-export const parseColorsObjectQualifier = r.anyOf(
+export const parseObjectTypeObjectQualifier: Pattern<{}> = r.anyOf(
   r`spells?`.as(_ => <IsSpellObjectQualifier>{ type: "isSpell" }),
   r`permanent cards?`.as(_ => <OrObjectQualifier>{
     type: "or",

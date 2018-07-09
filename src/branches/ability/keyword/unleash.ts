@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { UnleashKeywordAbility } from "@/types/ability";
 
-export const parseUnleashKeywordAbility = r`unleash`.as(
-  _ => <UnleashKeywordAbility>{ type: "keyword", keyword: "unleash" }
+export const parseUnleashKeywordAbility: Pattern<UnleashKeywordAbility> = (
+  r`unleash`.as(
+    _ => <UnleashKeywordAbility>{ type: "keyword", keyword: "unleash" }
+  )
 );

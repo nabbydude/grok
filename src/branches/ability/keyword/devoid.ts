@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { DevoidKeywordAbility } from "@/types/ability";
 
-export const parseDevoidKeywordAbility = r`devoid`.as(
-  _ => <DevoidKeywordAbility>{ type: "keyword", keyword: "devoid" }
+export const parseDevoidKeywordAbility: Pattern<DevoidKeywordAbility> = (
+  r`devoid`.as(
+    _ => <DevoidKeywordAbility>{ type: "keyword", keyword: "devoid" }
+  )
 );

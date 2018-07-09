@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ComparisonCondition, Condition, InCondition } from "@/types/condition";
 
 import { parseValue } from "@/branches/value/_";
 
-export const parseCondition = r.anyOf<Condition>(
+export const parseCondition: Pattern<Condition> = r.anyOf<Condition>(
   r`${r.anyOf(
     r`up to|less than or equal to`.as(_ => <"<=">"<="),
     r`greater than or equal to`.as(_ => <">=">">="),

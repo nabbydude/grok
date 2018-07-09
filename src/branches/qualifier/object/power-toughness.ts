@@ -1,9 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { AndObjectQualifier, AttributeObjectQualifier } from "@/types/object-qualifier";
 
-export const parseOwnedByObjectQualifier = r.reg(/(\d+)\/(\d+)/).as(
-  ([_, power, toughness]) => <AndObjectQualifier>{
+export const parsePowerToughnessObjectQualifier: Pattern<AndObjectQualifier> = (
+  r.reg(/(\d+)\/(\d+)/).as(([_, power, toughness]) => <AndObjectQualifier>{
     type: "and",
     qualifiers: [
       <AttributeObjectQualifier>{
@@ -23,5 +23,5 @@ export const parseOwnedByObjectQualifier = r.reg(/(\d+)\/(\d+)/).as(
         }
       }
     ]
-  }
+  })
 );

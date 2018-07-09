@@ -1,7 +1,7 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { DelveKeywordAbility } from "@/types/ability";
 
-export const parseDelveKeywordAbility = r`delve`.as(
-  _ => <DelveKeywordAbility>{ type: "keyword", keyword: "delve" }
+export const parseDelveKeywordAbility: Pattern<DelveKeywordAbility> = (
+  r`delve`.as(_ => <DelveKeywordAbility>{ type: "keyword", keyword: "delve" })
 );

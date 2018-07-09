@@ -1,4 +1,4 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { AndCost, Cost, OrCost } from "@/types/cost";
 
@@ -6,7 +6,7 @@ import { parseActionCost } from "./action";
 import { parseManaCost } from "./mana";
 import { parseTapCost } from "./tap";
 
-export const parseCost = r.many(
+export const parseCost: Pattern<Cost> = r.many(
   r.many(
     r.anyOf<Cost>(
       parseActionCost,

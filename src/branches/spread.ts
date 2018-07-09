@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ChoiceDividedSpread, DividedSpread, EachSpread, EvenlyDividedSpread, Spread } from "@/types/spread";
 
 import { parseScope } from "@/branches/scope/_";
 
-export const parseSpread = r.anyOf<Spread>(
+export const parseSpread: Pattern<Spread> = r.anyOf<Spread>(
   r`to`.as(_ => <EachSpread>{ type: "each" }),
   r`divided ${r.anyOf<DividedSpread>(
     r`evenly, rounded ${r.anyOf<"up" | "down">(

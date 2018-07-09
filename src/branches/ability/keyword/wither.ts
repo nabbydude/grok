@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { WitherKeywordAbility } from "@/types/ability";
 
-export const parseWitherKeywordAbility = r`wither`.as(
-  _ => <WitherKeywordAbility>{ type: "keyword", keyword: "wither" }
+export const parseWitherKeywordAbility: Pattern<WitherKeywordAbility> = (
+  r`wither`.as(
+    _ => <WitherKeywordAbility>{ type: "keyword", keyword: "wither" }
+  )
 );

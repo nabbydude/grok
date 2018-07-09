@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { MyriadKeywordAbility } from "@/types/ability";
 
-export const parseMyriadKeywordAbility = r`myriad`.as(
-  _ => <MyriadKeywordAbility>{ type: "keyword", keyword: "myriad" }
+export const parseMyriadKeywordAbility: Pattern<MyriadKeywordAbility> = (
+  r`myriad`.as(
+    _ => <MyriadKeywordAbility>{ type: "keyword", keyword: "myriad" }
+  )
 );

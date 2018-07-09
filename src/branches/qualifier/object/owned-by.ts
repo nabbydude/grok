@@ -1,10 +1,12 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { OwnedByObjectQualifier } from "@/types/object-qualifier";
 
 import { parseScope } from "@/branches/scope/_";
 
-export const parseOwnedByObjectQualifier = r.anyOf(
-  r`owned by ${parseScope}`,
-  r`${parseScope} owns?`
-).as(([scope]) => <OwnedByObjectQualifier>{ type: "ownedBy", scope });
+export const parseOwnedByObjectQualifier: Pattern<OwnedByObjectQualifier> = (
+  r.anyOf(
+    r`owned by ${parseScope}`,
+    r`${parseScope} owns?`
+  ).as(([scope]) => <OwnedByObjectQualifier>{ type: "ownedBy", scope })
+);

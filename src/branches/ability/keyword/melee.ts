@@ -1,7 +1,7 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { MeleeKeywordAbility } from "@/types/ability";
 
-export const parseMeleeKeywordAbility = r`melee`.as(
-  _ => <MeleeKeywordAbility>{ type: "keyword", keyword: "melee" }
+export const parseMeleeKeywordAbility: Pattern<MeleeKeywordAbility> = (
+  r`melee`.as(_ => <MeleeKeywordAbility>{ type: "keyword", keyword: "melee" })
 );

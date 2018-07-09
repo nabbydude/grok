@@ -1,13 +1,15 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { EternalizeKeywordAbility } from "@/types/ability";
 
 import { parseCost } from "@/branches/cost/_";
 
-export const parseEternalizeKeywordAbility = r`eternalize[— ]${parseCost}`.as(
-  ([cost]) => <EternalizeKeywordAbility>{
+export const parseEternalizeKeywordAbility: (
+  Pattern<EternalizeKeywordAbility>
+) = (
+  r`eternalize[— ]${parseCost}`.as(([cost]) => <EternalizeKeywordAbility>{
     type: "keyword",
     keyword: "eternalize",
     cost
-  }
+  })
 );

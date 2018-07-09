@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { AggregateValue } from "@/types/value";
 
 import { parseScope } from "@/branches/scope/_";
 
-export const parseAggregateValue = r`the ${r.anyOf(
+export const parseAggregateValue: Pattern<AggregateValue> = r`the ${r.anyOf(
   r`total`.as(_ => <"total">"total"),
   r`highest|most`.as(_ => <"highest">"highest"),
   r`lowest|least`.as(_ => <"lowest">"lowest")

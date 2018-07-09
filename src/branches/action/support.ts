@@ -1,9 +1,11 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { SupportAction } from "@/types/action";
 
 import { parseValue } from "@/branches/value/_";
 
-export const parseSupportAction = r`support ${parseValue}`.as(
-  ([value]) => <SupportAction>{ type: "support", value }
+export const parseSupportAction: Pattern<SupportAction> = (
+  r`support ${parseValue}`.as(
+    ([value]) => <SupportAction>{ type: "support", value }
+  )
 );

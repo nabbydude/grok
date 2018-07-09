@@ -1,7 +1,7 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { EverythingScope } from "@/types/scope";
 
-export const parseEverythingScope = r`everything`.as(
+export const parseEverythingScope: Pattern<EverythingScope> = r`everything`.as(
   _ => <EverythingScope>{ type: "everything" }
 );

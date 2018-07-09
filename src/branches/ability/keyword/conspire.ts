@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ConspireKeywordAbility } from "@/types/ability";
 
-export const parseConspireKeywordAbility = r`conspire`.as(
-  _ => <ConspireKeywordAbility>{ type: "keyword", keyword: "conspire" }
+export const parseConspireKeywordAbility: Pattern<ConspireKeywordAbility> = (
+  r`conspire`.as(
+    _ => <ConspireKeywordAbility>{ type: "keyword", keyword: "conspire" }
+  )
 );

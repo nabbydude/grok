@@ -1,8 +1,8 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { Mana } from "@/types/general";
 
-export const parseMana = r.many(
+export const parseMana: Pattern<Mana> = r.many(
   r.reg(/{(([WUBRGCSXYZ]|\d+)(\/[WUBRGCSXYZP])*)}/).as(
     ([_, type]) => type
   ),

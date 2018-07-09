@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { OutlastKeywordAbility } from "@/types/ability";
 
 import { parseCost } from "@/branches/cost/_";
 
-export const parseOutlastKeywordAbility = r`outlast[— ]${parseCost}`.as(
+export const parseOutlastKeywordAbility: Pattern<OutlastKeywordAbility> = r`outlast[— ]${parseCost}`.as(
   ([cost]) => <OutlastKeywordAbility>{
     type: "keyword",
     keyword: "outlast",

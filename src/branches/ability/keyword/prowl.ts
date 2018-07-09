@@ -1,13 +1,13 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ProwlKeywordAbility } from "@/types/ability";
 
 import { parseCost } from "@/branches/cost/_";
 
-export const parseProwlKeywordAbility = r`prowl[— ]${parseCost}`.as(
-  ([cost]) => <ProwlKeywordAbility>{
+export const parseProwlKeywordAbility: Pattern<ProwlKeywordAbility> = (
+  r`prowl[— ]${parseCost}`.as(([cost]) => <ProwlKeywordAbility>{
     type: "keyword",
     keyword: "prowl",
     cost
-  }
+  })
 );

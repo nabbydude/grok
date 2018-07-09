@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { ScopedAction } from "@/types/action";
 
 import { parseScope } from "@/branches/scope/_";
 
-export const parseScopedAction = r`${r.many(
+export const parseScopedAction: Pattern<ScopedAction> = r`${r.many(
   r.anyOf(
     r`counters?`.as(_ => <"counter">"counter"),
     r`destroys?`.as(_ => <"destroy">"destroy"),

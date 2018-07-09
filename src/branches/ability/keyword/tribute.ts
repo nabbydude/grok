@@ -1,13 +1,13 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { TributeKeywordAbility } from "@/types/ability";
 
 import { parseValue } from "@/branches/value/_";
 
-export const parseTributeKeywordAbility = r`tribute ${parseValue}`.as(
-  ([value]) => <TributeKeywordAbility>{
+export const parseTributeKeywordAbility: Pattern<TributeKeywordAbility> = (
+  r`tribute ${parseValue}`.as(([value]) => <TributeKeywordAbility>{
     type: "keyword",
     keyword: "tribute",
     value
-  }
+  })
 );

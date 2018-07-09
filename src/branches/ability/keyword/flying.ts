@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { FlyingKeywordAbility } from "@/types/ability";
 
-export const parseFlyingKeywordAbility = r`flying`.as(
-  _ => <FlyingKeywordAbility>{ type: "keyword", keyword: "flying" }
+export const parseFlyingKeywordAbility: Pattern<FlyingKeywordAbility> = (
+  r`flying`.as(
+    _ => <FlyingKeywordAbility>{ type: "keyword", keyword: "flying" }
+  )
 );

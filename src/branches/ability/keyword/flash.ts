@@ -1,7 +1,7 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { FlashKeywordAbility } from "@/types/ability";
 
-export const parseFlashKeywordAbility = r`flash`.as(
-  _ => <FlashKeywordAbility>{ type: "keyword", keyword: "flash" }
+export const parseFlashKeywordAbility: Pattern<FlashKeywordAbility> = (
+  r`flash`.as(_ => <FlashKeywordAbility>{ type: "keyword", keyword: "flash" })
 );

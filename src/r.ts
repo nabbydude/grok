@@ -80,3 +80,5 @@ export const r: Reader = Object.assign(
   ReaderFunction as CallableReader,
   { anyOf, list, many, reg, defer }
 );
+
+export { Pattern } from "@/reader/pattern/_";

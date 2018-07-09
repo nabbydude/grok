@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { GainLifeAction } from "@/types/action";
 
 import { parseValue } from "@/branches/value/_";
 
-export const parseGainLifeAction = r.anyOf(
+export const parseGainLifeAction: Pattern<GainLifeAction> = r.anyOf(
   r`gains? ${parseValue} life`,
   r`gains? life equal to ${parseValue}`
 ).as(([amount]) => <GainLifeAction>{ type: "gainLife", amount });

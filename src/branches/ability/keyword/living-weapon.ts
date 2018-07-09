@@ -1,7 +1,12 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { LivingWeaponKeywordAbility } from "@/types/ability";
 
-export const parseLivingWeaponKeywordAbility = r`living weapon`.as(
-  _ => <LivingWeaponKeywordAbility>{ type: "keyword", keyword: "livingWeapon" }
+export const parseLivingWeaponKeywordAbility: (
+  Pattern<LivingWeaponKeywordAbility>
+) = (
+  r`living weapon`.as(_ => <LivingWeaponKeywordAbility>{
+    type: "keyword",
+    keyword: "livingWeapon"
+  })
 );

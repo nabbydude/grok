@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { MenaceKeywordAbility } from "@/types/ability";
 
-export const parseMenaceKeywordAbility = r`menace`.as(
-  _ => <MenaceKeywordAbility>{ type: "keyword", keyword: "menace" }
+export const parseMenaceKeywordAbility: Pattern<MenaceKeywordAbility> = (
+  r`menace`.as(
+    _ => <MenaceKeywordAbility>{ type: "keyword", keyword: "menace" }
+  )
 );

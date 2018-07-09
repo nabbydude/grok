@@ -1,10 +1,10 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { RecoverKeywordAbility } from "@/types/ability";
 
 import { parseCost } from "@/branches/cost/_";
 
-export const parseRecoverKeywordAbility = r`recover[— ]${parseCost}`.as(
+export const parseRecoverKeywordAbility: Pattern<RecoverKeywordAbility> = r`recover[— ]${parseCost}`.as(
   ([cost]) => <RecoverKeywordAbility>{
     type: "keyword",
     keyword: "recover",

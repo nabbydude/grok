@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { RetraceKeywordAbility } from "@/types/ability";
 
-export const parseRetraceKeywordAbility = r`retrace`.as(
-  _ => <RetraceKeywordAbility>{ type: "keyword", keyword: "retrace" }
+export const parseRetraceKeywordAbility: Pattern<RetraceKeywordAbility> = (
+  r`retrace`.as(
+    _ => <RetraceKeywordAbility>{ type: "keyword", keyword: "retrace" }
+  )
 );

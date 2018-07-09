@@ -1,4 +1,4 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { Value } from "@/types/value";
 
@@ -9,7 +9,7 @@ import { parseCountValue     } from "./count";
 import { parseThatValue      } from "./that";
 import { parseVariableValue  } from "./variable";
 
-export const parseValue = r.anyOf<Value>(
+export const parseValue: Pattern<Value> = r.anyOf<Value>(
   parseAggregateValue,
   parseAttributeValue,
   parseConstantValue,

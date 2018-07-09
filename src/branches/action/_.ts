@@ -1,4 +1,4 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { Action } from "@/types/action";
 
@@ -18,7 +18,7 @@ import { parseSupportAction     } from "./support";
 
 import { parseScopedAction      } from "./scoped";
 
-export const parseAction = r.anyOf<Action>(
+export const parseAction: Pattern<Action> = r.anyOf<Action>(
   parseAttachAction,
   parseBolsterAction,
   parseDamageAction,

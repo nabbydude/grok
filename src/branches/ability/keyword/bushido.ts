@@ -1,7 +1,9 @@
-import { r } from "@/r";
+import { Pattern, r } from "@/r";
 
 import { BushidoKeywordAbility } from "@/types/ability";
 
-export const parseBushidoKeywordAbility = r`bushido`.as(
-  _ => <BushidoKeywordAbility>{ type: "keyword", keyword: "bushido" }
+export const parseBushidoKeywordAbility: Pattern<BushidoKeywordAbility> = (
+  r`bushido`.as(
+    _ => <BushidoKeywordAbility>{ type: "keyword", keyword: "bushido" }
+  )
 );
