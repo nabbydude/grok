@@ -1,6 +1,7 @@
 import { Pattern       } from "@/reader/pattern/_";
 import { AnyOfPattern  } from "@/reader/pattern/any-of";
 import { ChainPattern  } from "@/reader/pattern/chain";
+import { DeferredPattern } from "@/reader/pattern/deferred";
 import { ListPattern   } from "@/reader/pattern/list";
 import { ManyPattern   } from "@/reader/pattern/many";
 import { RegExpPattern } from "@/reader/pattern/reg-exp";
@@ -34,6 +35,7 @@ interface Reader extends CallableReader {
     lastSeparator?: Pattern
   ): ManyPattern<T>;
   reg(regExp: RegExp): RegExpPattern;
+  defer<T>(factory: () => Pattern<T>): DeferredPattern<T>;
 }
 
 // tslint:disable:max-line-length
@@ -69,8 +71,12 @@ function reg(regExp: RegExp): RegExpPattern {
   return new RegExpPattern(regExp);
 }
 
+function defer<T>(factory: () => Pattern<T>): DeferredPattern<T> {
+  return new DeferredPattern(factory);
+}
+
 // tslint:disable-next-line:prefer-object-spread
 export const r: Reader = Object.assign(
   ReaderFunction as CallableReader,
-  { anyOf, list, many, reg }
+  { anyOf, list, many, reg, defer }
 );
