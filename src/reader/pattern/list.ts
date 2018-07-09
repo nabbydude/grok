@@ -21,8 +21,8 @@ export class ListPattern<T> extends Pattern<T[]> {
   public exec(str: string, index: number): Result<T[]> {
     if (this.patterns.length < 1) return { success: false };
     const payload: T[] = [];
-    let i = 1;
     let res = this.patterns[0].exec(str, index);
+    let i = 1;
     for (; !res.success; i++) {
       if (i >= this.patterns.length) return res;
       res = this.patterns[i].exec(str, index);
@@ -33,10 +33,11 @@ export class ListPattern<T> extends Pattern<T[]> {
       index = res.end;
       sepRes = this.separator.exec(str, res.end);
       if (!sepRes.success) break;
-      let j = i;
+      res = this.patterns[i].exec(str, index);
+      let j = i + 1;
       for (; !res.success; j++) {
         if (j >= this.patterns.length) break OUTER;
-        res = this.patterns[i].exec(str, index);
+        res = this.patterns[j].exec(str, index);
       }
       i = j;
     }
