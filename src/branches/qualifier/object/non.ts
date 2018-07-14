@@ -8,12 +8,14 @@ import { parseSubtypeObjectQualifier } from "@/branches/qualifier/object/subtype
 import { parseSupertypeObjectQualifier } from "@/branches/qualifier/object/supertype";
 import { parseTokenObjectQualifier } from "@/branches/qualifier/object/token";
 
-export const parseNonObjectQualifier: Pattern<NotObjectQualifier> = r.anyOf(
-  r`non${r.anyOf<ObjectQualifier>(
-    parseColorObjectQualifier,
-    parseSupertypeObjectQualifier,
-    parseCardTypeObjectQualifier,
-    parseTokenObjectQualifier
-  )}`,
-  r`Non-${parseSubtypeObjectQualifier}`
-).as(([qualifier]) => <NotObjectQualifier>{ type: "not", qualifier });
+export const parseNonObjectQualifier: Pattern<NotObjectQualifier> = (
+  r.defer(() => r.anyOf(
+    r`non${r.anyOf<ObjectQualifier>(
+      parseColorObjectQualifier,
+      parseSupertypeObjectQualifier,
+      parseCardTypeObjectQualifier,
+      parseTokenObjectQualifier
+    )}`,
+    r`Non-${parseSubtypeObjectQualifier}`
+  ).as(([qualifier]) => <NotObjectQualifier>{ type: "not", qualifier }))
+);

@@ -5,7 +5,7 @@ import { HasSubtypeObjectQualifier } from "@/types/object-qualifier";
 import { parseSubtype } from "@/branches/subtype";
 
 export const parseSubtypeObjectQualifier: Pattern<HasSubtypeObjectQualifier> = (
-  parseSubtype.as(
+  r.defer(() => parseSubtype.as(
     subtype => <HasSubtypeObjectQualifier>{ type: "hasSubtype", subtype }
-  )
+  ))
 );

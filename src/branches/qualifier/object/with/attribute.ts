@@ -8,17 +8,15 @@ import { parseValue } from "@/branches/value/_";
 
 export const parseAttributeWithObjectQualifier: (
   Pattern<AttributeObjectQualifier>
-) = (
-  r`${r.anyOf(
-    r`converted mana cost`.as(_ => <"convertedManaCost">"convertedManaCost"),
-    r`power`.as(_ => <"power">"power"),
-    r`toughness`.as(_ => <"toughness">"toughness")
-  )} ${r.anyOf(
-      parseCondition,
-      parseValue.as(value => <ComparisonCondition>{ operator: "=", value })
-  )}`.as(([attribute, condition]) => <AttributeObjectQualifier>{
-    type: "attribute",
-    attribute,
-    condition
-  })
-);
+) = r.defer(() => r`${r.anyOf(
+  r`converted mana cost`.as(_ => <"convertedManaCost">"convertedManaCost"),
+  r`power`.as(_ => <"power">"power"),
+  r`toughness`.as(_ => <"toughness">"toughness")
+)} ${r.anyOf(
+    parseCondition,
+    parseValue.as(value => <ComparisonCondition>{ operator: "=", value })
+)}`.as(([attribute, condition]) => <AttributeObjectQualifier>{
+  type: "attribute",
+  attribute,
+  condition
+}));

@@ -4,8 +4,8 @@ import { AndScope } from "@/types/scope";
 
 import { parseObjectScope } from "@/branches/scope/object/_";
 
-export const parseEachScope: Pattern<AndScope> = r`each ${r.many(
+export const parseEachScope: Pattern<AndScope> = r.defer(() => r`each ${r.many(
   parseObjectScope,
   r`, `,
   r`,? or `
-)}`.as(([scopes]) => <AndScope>{ type: "and", scopes });
+)}`.as(([scopes]) => <AndScope>{ type: "and", scopes }));

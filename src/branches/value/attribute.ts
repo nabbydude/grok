@@ -5,7 +5,7 @@ import { AttributeValue } from "@/types/value";
 import { parseScope } from "@/branches/scope/_";
 
 export const parseAttributeValue: Pattern<AttributeValue> = (
-  r`${parseScope}('s?|your|its) ${r.anyOf(
+  r.defer(() => r`${parseScope}('s?|your|its) ${r.anyOf(
     r`converted mana cost`.as(_ => <"convertedManaCost">"convertedManaCost"),
     r`power`.as(_ => <"power">"power"),
     r`toughness`.as(_ => <"toughness">"toughness")
@@ -13,5 +13,5 @@ export const parseAttributeValue: Pattern<AttributeValue> = (
     type: "attribute",
     attribute,
     scope
-  })
+  }))
 );

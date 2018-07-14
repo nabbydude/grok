@@ -7,9 +7,11 @@ import { parseCost } from "@/branches/cost/_";
 export const parseEternalizeKeywordAbility: (
   Pattern<EternalizeKeywordAbility>
 ) = (
-  r`eternalize[— ]${parseCost}`.as(([cost]) => <EternalizeKeywordAbility>{
-    type: "keyword",
-    keyword: "eternalize",
-    cost
-  })
+  r.defer(() => (
+    r`eternalize[— ]${parseCost}`.as(([cost]) => <EternalizeKeywordAbility>{
+      type: "keyword",
+      keyword: "eternalize",
+      cost
+    })
+  ))
 );

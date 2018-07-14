@@ -5,9 +5,9 @@ import { ProwlKeywordAbility } from "@/types/ability";
 import { parseCost } from "@/branches/cost/_";
 
 export const parseProwlKeywordAbility: Pattern<ProwlKeywordAbility> = (
-  r`prowl[— ]${parseCost}`.as(([cost]) => <ProwlKeywordAbility>{
+  r.defer(() => r`prowl[— ]${parseCost}`.as(([cost]) => <ProwlKeywordAbility>{
     type: "keyword",
     keyword: "prowl",
     cost
-  })
+  }))
 );

@@ -5,9 +5,9 @@ import { DredgeKeywordAbility } from "@/types/ability";
 import { parseValue } from "@/branches/value/_";
 
 export const parseDredgeKeywordAbility: Pattern<DredgeKeywordAbility> = (
-  r`dredge ${parseValue}`.as(([value]) => <DredgeKeywordAbility>{
+  r.defer(() => r`dredge ${parseValue}`.as(([value]) => <DredgeKeywordAbility>{
     type: "keyword",
     keyword: "dredge",
     value
-  })
+  }))
 );

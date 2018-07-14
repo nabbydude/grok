@@ -5,8 +5,8 @@ import { OwnedByObjectQualifier } from "@/types/object-qualifier";
 import { parseScope } from "@/branches/scope/_";
 
 export const parseOwnedByObjectQualifier: Pattern<OwnedByObjectQualifier> = (
-  r.anyOf(
+  r.defer(() => r.anyOf(
     r`owned by ${parseScope}`,
     r`${parseScope} owns?`
-  ).as(([scope]) => <OwnedByObjectQualifier>{ type: "ownedBy", scope })
+  ).as(([scope]) => <OwnedByObjectQualifier>{ type: "ownedBy", scope }))
 );

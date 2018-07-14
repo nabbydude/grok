@@ -7,7 +7,7 @@ import { parseCounterWithObjectQualifier   } from "@/branches/qualifier/object/w
 import { parseKeywordWithObjectQualifier   } from "@/branches/qualifier/object/with/keyword";
 
 export const parseWithObjectQualifier: Pattern<ObjectQualifier[]> = (
-  r`with ${r.list<ObjectQualifier>(
+  r.defer(() => r`with ${r.list<ObjectQualifier>(
     [
       parseAttributeWithObjectQualifier,
       parseCounterWithObjectQualifier,
@@ -15,5 +15,5 @@ export const parseWithObjectQualifier: Pattern<ObjectQualifier[]> = (
     ],
     r`, `,
     r`,? and `
-  )}`.as(([qualifiers]) => qualifiers)
+  )}`.as(([qualifiers]) => qualifiers))
 );

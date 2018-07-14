@@ -4,10 +4,12 @@ import { RampageKeywordAbility } from "@/types/ability";
 
 import { parseValue } from "@/branches/value/_";
 
-export const parseRampageKeywordAbility: Pattern<RampageKeywordAbility> = r`rampage ${parseValue}`.as(
-  ([value]) => <RampageKeywordAbility>{
-    type: "keyword",
-    keyword: "rampage",
-    value
-  }
+export const parseRampageKeywordAbility: Pattern<RampageKeywordAbility> = (
+  r.defer(() => r`rampage ${parseValue}`.as(
+    ([value]) => <RampageKeywordAbility>{
+      type: "keyword",
+      keyword: "rampage",
+      value
+    }
+  ))
 );

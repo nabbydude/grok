@@ -132,7 +132,7 @@ import { parseVigilanceKeywordAbility        } from "@/branches/ability/keyword/
 import { parseWitherKeywordAbility           } from "@/branches/ability/keyword/wither";
 
 export const parseKeywordAbility: Pattern<KeywordAbility> = (
-  r.anyOf<KeywordAbility>(
+  r.defer(() => r.anyOf<KeywordAbility>(
     parseDeathtouchKeywordAbility,
     parseDefenderKeywordAbility,
     parseDoubleStrikeKeywordAbility,
@@ -263,5 +263,5 @@ export const parseKeywordAbility: Pattern<KeywordAbility> = (
     parseProtectionKeywordAbility,
     parseBandingKeywordAbility,
     parseChampionKeywordAbility
-  )
+  ))
 );

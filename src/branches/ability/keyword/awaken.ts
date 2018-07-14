@@ -6,7 +6,7 @@ import { parseCost } from "@/branches/cost/_";
 import { parseValue } from "@/branches/value/_";
 
 export const parseAwakenKeywordAbility: Pattern<AwakenKeywordAbility> = (
-  r`awaken ${
+  r.defer(() => r`awaken ${
     parseValue
   }—${
     parseCost
@@ -15,5 +15,5 @@ export const parseAwakenKeywordAbility: Pattern<AwakenKeywordAbility> = (
     keyword: "awaken",
     cost,
     value
-  })
+  }))
 );

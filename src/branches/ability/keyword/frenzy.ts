@@ -5,9 +5,9 @@ import { FrenzyKeywordAbility } from "@/types/ability";
 import { parseValue } from "@/branches/value/_";
 
 export const parseFrenzyKeywordAbility: Pattern<FrenzyKeywordAbility> = (
-  r`frenzy ${parseValue}`.as(([value]) => <FrenzyKeywordAbility>{
+  r.defer(() => r`frenzy ${parseValue}`.as(([value]) => <FrenzyKeywordAbility>{
     type: "keyword",
     keyword: "frenzy",
     value
-  })
+  }))
 );

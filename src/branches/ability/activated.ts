@@ -8,7 +8,7 @@ import { parseCost } from "@/branches/cost/_";
 import { parseEffect } from "@/branches/effect/_";
 
 export const parseActivatedAbility: Pattern<ActivatedAbility> = (
-  r`${parseCost}: ${parseEffect}.${r.anyOf(
+  r.defer(() => r`${parseCost}: ${parseEffect}.${r.anyOf(
     r` ${parseActivationInstructions}`.as(
       ([activationInstructions]) => activationInstructions
     ),
@@ -18,5 +18,5 @@ export const parseActivatedAbility: Pattern<ActivatedAbility> = (
     cost,
     effect,
     instructions
-  })
+  }))
 );

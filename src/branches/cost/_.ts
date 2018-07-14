@@ -6,7 +6,7 @@ import { parseActionCost } from "@/branches/cost/action";
 import { parseManaCost } from "@/branches/cost/mana";
 import { parseTapCost } from "@/branches/cost/tap";
 
-export const parseCost: Pattern<Cost> = r.many(
+export const parseCost: Pattern<Cost> = r.defer(() => r.many(
   r.many(
     r.anyOf<Cost>(
       parseActionCost,
@@ -16,4 +16,4 @@ export const parseCost: Pattern<Cost> = r.many(
     r`, `
   ).as(costs => costs.length > 1 ? <AndCost>{ type: "and", costs } : costs[0]),
   r`,? or `
-).as(costs => costs.length > 1 ? <OrCost>{ type: "or", costs } : costs[0]);
+).as(costs => costs.length > 1 ? <OrCost>{ type: "or", costs } : costs[0]));

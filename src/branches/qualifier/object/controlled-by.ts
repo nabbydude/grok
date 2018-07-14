@@ -6,11 +6,9 @@ import { parseScope } from "@/branches/scope/_";
 
 export const parseControlledByObjectQualifier: (
   Pattern<ControlledByObjectQualifier>
-) = (
-  r.anyOf(
-    r`controlled by ${parseScope}`,
-    r`${parseScope} controls?`
-  ).as(
-    ([scope]) => <ControlledByObjectQualifier>{ type: "controlledBy", scope }
-  )
-);
+) = r.defer(() => r.anyOf(
+  r`controlled by ${parseScope}`,
+  r`${parseScope} controls?`
+).as(
+  ([scope]) => <ControlledByObjectQualifier>{ type: "controlledBy", scope }
+));

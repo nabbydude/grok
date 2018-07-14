@@ -5,9 +5,11 @@ import { MadnessKeywordAbility } from "@/types/ability";
 import { parseCost } from "@/branches/cost/_";
 
 export const parseMadnessKeywordAbility: Pattern<MadnessKeywordAbility> = (
-  r`madness[— ]${parseCost}`.as(([cost]) => <MadnessKeywordAbility>{
-    type: "keyword",
-    keyword: "madness",
-    cost
-  })
+  r.defer(() => (
+    r`madness[— ]${parseCost}`.as(([cost]) => <MadnessKeywordAbility>{
+      type: "keyword",
+      keyword: "madness",
+      cost
+    })
+  ))
 );

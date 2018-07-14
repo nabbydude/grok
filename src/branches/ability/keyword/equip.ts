@@ -7,7 +7,7 @@ import { parseCost } from "@/branches/cost/_";
 import { parseScope } from "@/branches/scope/_";
 
 export const parseEquipKeywordAbility: Pattern<EquipKeywordAbility> = (
-  r`equip${r.anyOf(
+  r.defer(() => r`equip${r.anyOf(
     r` ${parseScope}`.as(([scope]) => scope),
     r``.as(_ => <EverythingScope>{ type: "everything" })
   )}[— ]${parseCost}`.as(([scope, cost]) => <EquipKeywordAbility>{
@@ -15,5 +15,5 @@ export const parseEquipKeywordAbility: Pattern<EquipKeywordAbility> = (
     keyword: "equip",
     scope,
     cost
-  })
+  }))
 );

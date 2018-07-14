@@ -7,7 +7,7 @@ import { parseCost } from "@/branches/cost/_";
 import { parseValue } from "@/branches/value/_";
 
 export const parseReinforceKeywordAbility: Pattern<ReinforceKeywordAbility> = (
-  r`reinforce ${
+  r.defer(() => r`reinforce ${
     parseValue
   }—${
     parseCost
@@ -16,5 +16,5 @@ export const parseReinforceKeywordAbility: Pattern<ReinforceKeywordAbility> = (
     keyword: "reinforce",
     cost,
     value
-  })
+  }))
 );

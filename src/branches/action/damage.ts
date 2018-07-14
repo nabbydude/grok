@@ -7,7 +7,7 @@ import { parseSpread } from "@/branches/spread";
 import { parseValue } from "@/branches/value/_";
 
 export const parseDamageAction: Pattern<DamageAction> = (
-  r`${parseScope} deals? ${r.anyOf(
+  r.defer(() => r`${parseScope} deals? ${r.anyOf(
     r`${parseValue} damage ${parseSpread} ${parseScope}`.as(
       ([amount, spread, scope]) => ({ amount, spread, scope })
     ),
@@ -17,5 +17,5 @@ export const parseDamageAction: Pattern<DamageAction> = (
     r`damage ${parseSpread} ${parseScope} equal to ${parseValue}`.as(
       ([spread, scope, amount]) => ({ amount, spread, scope })
     )
-  )}`.as(([source, partial]) => <DamageAction>{ source, ...partial })
+  )}`.as(([source, partial]) => <DamageAction>{ source, ...partial }))
 );

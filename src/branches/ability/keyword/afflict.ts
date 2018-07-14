@@ -5,9 +5,11 @@ import { AfflictKeywordAbility } from "@/types/ability";
 import { parseValue } from "@/branches/value/_";
 
 export const parseAfflictKeywordAbility: Pattern<AfflictKeywordAbility> = (
-  r`afflict ${parseValue}`.as(([value]) => <AfflictKeywordAbility>{
-    type: "keyword",
-    keyword: "afflict",
-    value
-  })
+  r.defer(() => (
+    r`afflict ${parseValue}`.as(([value]) => <AfflictKeywordAbility>{
+      type: "keyword",
+      keyword: "afflict",
+      value
+    })
+  ))
 );

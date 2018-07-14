@@ -5,9 +5,9 @@ import { DevourKeywordAbility } from "@/types/ability";
 import { parseValue } from "@/branches/value/_";
 
 export const parseDevourKeywordAbility: Pattern<DevourKeywordAbility> = (
-  r`devour ${parseValue}`.as(([value]) => <DevourKeywordAbility>{
+  r.defer(() => r`devour ${parseValue}`.as(([value]) => <DevourKeywordAbility>{
     type: "keyword",
     keyword: "devour",
     value
-  })
+  }))
 );

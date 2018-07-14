@@ -5,9 +5,9 @@ import { RippleKeywordAbility } from "@/types/ability";
 import { parseValue } from "@/branches/value/_";
 
 export const parseRippleKeywordAbility: Pattern<RippleKeywordAbility> = (
-  r`ripple ${parseValue}`.as(([value]) => <RippleKeywordAbility>{
+  r.defer(() => r`ripple ${parseValue}`.as(([value]) => <RippleKeywordAbility>{
     type: "keyword",
     keyword: "ripple",
     value
-  })
+  }))
 );

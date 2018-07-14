@@ -4,7 +4,7 @@ import { ChoiceDividedSpread, DividedSpread, EachSpread, EvenlyDividedSpread, Sp
 
 import { parseScope } from "@/branches/scope/_";
 
-export const parseSpread: Pattern<Spread> = r.anyOf<Spread>(
+export const parseSpread: Pattern<Spread> = r.defer(() => r.anyOf<Spread>(
   r`to`.as(_ => <EachSpread>{ type: "each" }),
   r`divided ${r.anyOf<DividedSpread>(
     r`evenly, rounded ${r.anyOf<"up" | "down">(
@@ -21,4 +21,4 @@ export const parseSpread: Pattern<Spread> = r.anyOf<Spread>(
       by
     })
   )} among`.as(([dividedInfo]) => <DividedSpread>dividedInfo)
-);
+));

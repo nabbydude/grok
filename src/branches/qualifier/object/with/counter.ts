@@ -9,18 +9,16 @@ import { parseValue } from "@/branches/value/_";
 
 export const parseCounterWithObjectQualifier: (
   Pattern<CounterObjectQualifier>
-) = (
-  r`${r.anyOf(
-    parseCondition,
-    parseValue.as(value => <ComparisonCondition>{ operator: ">=", value })
-  )} ${r.anyOf(
-    r`${parseCounterName} `.as(([counterName]) => counterName),
-    r``.as(_ => undefined)
-  )}counters? on (it|them)`.as(
-    ([condition, counterName]) => <CounterObjectQualifier>{
-      type: "counter",
-      counterName,
-      condition
-    }
-  )
-);
+) = r.defer(() => r`${r.anyOf(
+  parseCondition,
+  parseValue.as(value => <ComparisonCondition>{ operator: ">=", value })
+)} ${r.anyOf(
+  r`${parseCounterName} `.as(([counterName]) => counterName),
+  r``.as(_ => undefined)
+)}counters? on (it|them)`.as(
+  ([condition, counterName]) => <CounterObjectQualifier>{
+    type: "counter",
+    counterName,
+    condition
+  }
+));

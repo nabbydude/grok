@@ -17,7 +17,7 @@ import { parseScopedAction      } from "@/branches/action/scoped";
 import { parseScryAction        } from "@/branches/action/scry";
 import { parseSupportAction     } from "@/branches/action/support";
 
-export const parseAction: Pattern<Action> = r.anyOf<Action>(
+export const parseAction: Pattern<Action> = r.defer(() => r.anyOf<Action>(
   parseAttachAction,
   parseBolsterAction,
   parseDamageAction,
@@ -32,4 +32,4 @@ export const parseAction: Pattern<Action> = r.anyOf<Action>(
   parseScryAction,
   parseSupportAction,
   parseScopedAction
-);
+));

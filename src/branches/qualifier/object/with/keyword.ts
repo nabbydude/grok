@@ -6,8 +6,6 @@ import { parseKeyword } from "@/branches/keyword";
 
 export const parseKeywordWithObjectQualifier: (
   Pattern<HasKeywordObjectQualifier>
-) = (
-  parseKeyword.as(
-    keyword => <HasKeywordObjectQualifier>{ type: "hasKeyword", keyword }
-  )
-);
+) = r.defer(() => parseKeyword.as(
+  keyword => <HasKeywordObjectQualifier>{ type: "hasKeyword", keyword }
+));

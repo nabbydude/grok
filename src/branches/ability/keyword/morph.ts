@@ -5,9 +5,9 @@ import { MorphKeywordAbility } from "@/types/ability";
 import { parseCost } from "@/branches/cost/_";
 
 export const parseMorphKeywordAbility: Pattern<MorphKeywordAbility> = (
-  r`morph[— ]${parseCost}`.as(([cost]) => <MorphKeywordAbility>{
+  r.defer(() => r`morph[— ]${parseCost}`.as(([cost]) => <MorphKeywordAbility>{
     type: "keyword",
     keyword: "morph",
     cost
-  })
+  }))
 );

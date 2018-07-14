@@ -6,9 +6,7 @@ import { parseSupertype } from "@/branches/supertype";
 
 export const parseSupertypeObjectQualifier: (
   Pattern<HasSupertypeObjectQualifier>
-) = (
-  parseSupertype.as(supertype => <HasSupertypeObjectQualifier>{
-    type: "hasSupertype",
-    supertype
-  })
-);
+) = r.defer(() => parseSupertype.as(supertype => <HasSupertypeObjectQualifier>{
+  type: "hasSupertype",
+  supertype
+}));

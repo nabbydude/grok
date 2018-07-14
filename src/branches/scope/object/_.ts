@@ -14,7 +14,7 @@ import { parseTokenObjectQualifier } from "@/branches/qualifier/object/token";
 import { parseWithObjectQualifier } from "@/branches/qualifier/object/with/_";
 
 export const parseObjectScope: Pattern<AllObjectScope> = (
-  r.list<ObjectQualifier[]>(
+  r.defer(() => r.list<ObjectQualifier[]>(
     [
       parseTappedObjectQualifier.as(qualifier => [qualifier]),
       parseTokenObjectQualifier.as(qualifier => [qualifier]),
@@ -40,5 +40,5 @@ export const parseObjectScope: Pattern<AllObjectScope> = (
         flattenedQualifiers[0]
       )
     };
-  })
+  }))
 );

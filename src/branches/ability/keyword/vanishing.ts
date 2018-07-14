@@ -5,9 +5,11 @@ import { VanishingKeywordAbility } from "@/types/ability";
 import { parseValue } from "@/branches/value/_";
 
 export const parseVanishingKeywordAbility: Pattern<VanishingKeywordAbility> = (
-  r`vanishing ${parseValue}`.as(([value]) => <VanishingKeywordAbility>{
-    type: "keyword",
-    keyword: "vanishing",
-    value
-  })
+  r.defer(() => (
+    r`vanishing ${parseValue}`.as(([value]) => <VanishingKeywordAbility>{
+      type: "keyword",
+      keyword: "vanishing",
+      value
+    })
+  ))
 );

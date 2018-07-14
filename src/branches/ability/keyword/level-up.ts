@@ -5,9 +5,11 @@ import { LevelUpKeywordAbility } from "@/types/ability";
 import { parseCost } from "@/branches/cost/_";
 
 export const parseLevelUpKeywordAbility: Pattern<LevelUpKeywordAbility> = (
-  r`level up[— ]${parseCost}`.as(([cost]) => <LevelUpKeywordAbility>{
-    type: "keyword",
-    keyword: "levelUp",
-    cost
-  })
+  r.defer(() => (
+    r`level up[— ]${parseCost}`.as(([cost]) => <LevelUpKeywordAbility>{
+      type: "keyword",
+      keyword: "levelUp",
+      cost
+    })
+  ))
 );
