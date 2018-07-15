@@ -4,8 +4,6 @@ import { IntimidateKeywordAbility } from "@/types/ability";
 
 export const parseIntimidateKeywordAbility: (
   Pattern<IntimidateKeywordAbility>
-) = (
-  r`intimidate`.as(
-    _ => <IntimidateKeywordAbility>{ type: "keyword", keyword: "intimidate" }
-  )
+) = r`intimidate`.as(
+  _ => <IntimidateKeywordAbility>{ type: "keyword", keyword: "intimidate" }
 );

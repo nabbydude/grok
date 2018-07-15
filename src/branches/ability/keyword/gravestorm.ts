@@ -4,8 +4,6 @@ import { GravestormKeywordAbility } from "@/types/ability";
 
 export const parseGravestormKeywordAbility: (
   Pattern<GravestormKeywordAbility>
-) = (
-  r`gravestorm`.as(
-    _ => <GravestormKeywordAbility>{ type: "keyword", keyword: "gravestorm" }
-  )
+) = r`gravestorm`.as(
+  _ => <GravestormKeywordAbility>{ type: "keyword", keyword: "gravestorm" }
 );

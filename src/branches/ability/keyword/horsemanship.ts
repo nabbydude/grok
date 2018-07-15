@@ -4,9 +4,7 @@ import { HorsemanshipKeywordAbility } from "@/types/ability";
 
 export const parseHorsemanshipKeywordAbility: (
   Pattern<HorsemanshipKeywordAbility>
-) = (
-  r`horsemanship`.as(_ => <HorsemanshipKeywordAbility>{
-    type: "keyword",
-    keyword: "horsemanship"
-  })
-);
+) = r`horsemanship`.as(_ => <HorsemanshipKeywordAbility>{
+  type: "keyword",
+  keyword: "horsemanship"
+});

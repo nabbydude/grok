@@ -4,8 +4,6 @@ import { TotemArmorKeywordAbility } from "@/types/ability";
 
 export const parseTotemArmorKeywordAbility: (
   Pattern<TotemArmorKeywordAbility>
-) = (
-  r`totem armor`.as(
-    _ => <TotemArmorKeywordAbility>{ type: "keyword", keyword: "totemArmor" }
-  )
+) = r`totem armor`.as(
+  _ => <TotemArmorKeywordAbility>{ type: "keyword", keyword: "totemArmor" }
 );

@@ -4,8 +4,6 @@ import { FirstStrikeKeywordAbility } from "@/types/ability";
 
 export const parseFirstStrikeKeywordAbility: (
   Pattern<FirstStrikeKeywordAbility>
-) = (
-  r`first strike`.as(
-    _ => <FirstStrikeKeywordAbility>{ type: "keyword", keyword: "firstStrike" }
-  )
+) = r`first strike`.as(
+  _ => <FirstStrikeKeywordAbility>{ type: "keyword", keyword: "firstStrike" }
 );
