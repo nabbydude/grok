@@ -1,8 +1,20 @@
 import { Pattern, r } from "@/r";
 
-import { HasCardTypeObjectQualifier, IsAbilityObjectQualifier, IsCardObjectQualifier, IsSpellObjectQualifier, ObjectQualifier, OrObjectQualifier } from "@/types/object-qualifier";
+import { HasCardTypeObjectQualifier, InZoneObjectQualifier, IsAbilityObjectQualifier, IsCardObjectQualifier, IsSpellObjectQualifier, OrObjectQualifier } from "@/types/object-qualifier";
 
-export const parseObjectTypeObjectQualifier: Pattern<{}> = r.anyOf(
+export const parseObjectTypeObjectQualifier: Pattern<
+  IsSpellObjectQualifier |
+  OrObjectQualifier |
+  InZoneObjectQualifier |
+  IsAbilityObjectQualifier |
+  IsCardObjectQualifier
+> = r.anyOf<
+  IsSpellObjectQualifier |
+  OrObjectQualifier |
+  InZoneObjectQualifier |
+  IsAbilityObjectQualifier |
+  IsCardObjectQualifier
+>(
   r`spells?`.as(_ => <IsSpellObjectQualifier>{ type: "isSpell" }),
   r`permanent cards?`.as(_ => <OrObjectQualifier>{
     type: "or",
@@ -29,7 +41,10 @@ export const parseObjectTypeObjectQualifier: Pattern<{}> = r.anyOf(
       }
     ]
   }),
-  r`permanents?`.as(_ => <{}>{ type: "inZone", zone: { type: "battlefield" } }),
+  r`permanents?`.as(_ => <InZoneObjectQualifier>{
+    type: "inZone",
+    zone: { type: "battlefield" }
+  }),
   r`abilit(y|ies)`.as(_ => <IsAbilityObjectQualifier>{ type: "isAbility" }),
   r`cards?`.as(_ => <IsCardObjectQualifier>{ type: "isCard" })
 );

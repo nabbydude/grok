@@ -1,6 +1,7 @@
 import { Condition } from "@/types/condition";
 import { CardName, CardType, Color, CounterName, Keyword, ObjectAttribute, Subtype, Supertype } from "@/types/general";
 import { Scope } from "@/types/scope";
+import { Zone } from "@/types/zone";
 
 interface ObjectQualifierBase {
   type: string;
@@ -9,6 +10,11 @@ interface ObjectQualifierBase {
 //#region Defs
 
 //#region Basic
+
+export interface InZoneObjectQualifier extends ObjectQualifierBase {
+  type: "inZone";
+  zone: Zone;
+}
 
 export interface HasKeywordObjectQualifier extends ObjectQualifierBase {
   type: "hasKeyword";
