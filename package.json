@@ -5,10 +5,10 @@
   "main": "./bin/index.js",
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^9.6.22",
+    "@types/node": "^9.6.55",
     "babel-cli": "^6.26.0",
     "babel-plugin-module-resolver": "^3.1.1",
-    "typescript": "^3.0.0-dev.20180623"
+    "typescript": "^3.6.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
