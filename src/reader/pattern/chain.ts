@@ -1,23 +1,25 @@
-import { PatternTuple } from "@/reader/pattern/util";
+import { DePatternTuple, PatternTuple } from "@/reader/pattern/util";
 
 import { Result } from "@/reader/result";
 
 import { Pattern } from "@/reader/pattern/_";
 
-export class ChainPattern<T extends unknown[]> extends Pattern<T> {
+export class ChainPattern<
+  T extends Pattern[]
+> extends Pattern<DePatternTuple<T>> {
   private strings: ReadonlyArray<string>;
-  private patterns: PatternTuple<T>;
+  private patterns: T;
 
   public constructor(
     strings: ReadonlyArray<string>,
-    patterns: PatternTuple<T>
+    patterns: T
   ) {
     super();
     this.strings = strings;
     this.patterns = patterns;
   }
 
-  public exec(str: string, index: number): Result<T> {
+  public exec(str: string, index: number): Result<DePatternTuple<T>> {
     const payload = [];
     let reg: RegExp;
     if (this.strings[0] !== "") {
@@ -39,6 +41,6 @@ export class ChainPattern<T extends unknown[]> extends Pattern<T> {
       }
     }
 
-    return { success: true, end: index, payload: <T>payload };
+    return { success: true, end: index, payload: <DePatternTuple<T>>payload };
   }
 }
