@@ -6,6 +6,6 @@ import { parseAction } from "@/branches/action/_";
 
 export const parseActionCost: Pattern<ActionCost> = (
   r.defer(() => parseAction.as(
-    action => <ActionCost>{ type: "action", action }
+    (_, action) => <ActionCost>{ type: "action", action }
   ))
 );

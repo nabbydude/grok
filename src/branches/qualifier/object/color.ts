@@ -6,6 +6,7 @@ import { parseColor } from "@/branches/color";
 
 export const parseColorObjectQualifier: Pattern<HasColorObjectQualifier> = (
   r.defer(() => (
-    parseColor.as(color => <HasColorObjectQualifier>{ type: "hasColor", color })
+    // tslint:disable-next-line:max-line-length
+    parseColor.as((_, color) => <HasColorObjectQualifier>{ type: "hasColor", color })
   ))
 );

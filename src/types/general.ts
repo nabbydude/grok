@@ -1,3 +1,5 @@
+import { Node } from "@/reader/result";
+
 import { Ability } from "@/types/ability";
 
 export type ObjectAttribute = (
@@ -18,11 +20,16 @@ export type CardType = string;
 export type Subtype = string;
 
 export type Variable = "X" | "Y" | "Z";
+export type RoundingDirection = "up" | "down";
 
 export interface Mana {
-  [type: string]: number;
+  pips: Node<Pip>[];
+}
+
+export interface Pip {
+  symbol: Node<string>;
 }
 
 export interface Card {
-  abilities: Ability[];
+  abilities: Node<Node<Ability>[]>[];
 }

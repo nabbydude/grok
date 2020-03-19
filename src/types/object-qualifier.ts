@@ -1,6 +1,9 @@
+import { Node } from "@/reader/result";
+
 import { Condition } from "@/types/condition";
 import { CardName, CardType, Color, CounterName, Keyword, ObjectAttribute, Subtype, Supertype } from "@/types/general";
 import { Scope } from "@/types/scope";
+import { Value } from "@/types/value";
 import { Zone } from "@/types/zone";
 
 interface ObjectQualifierBase {
@@ -13,47 +16,73 @@ interface ObjectQualifierBase {
 
 export interface InZoneObjectQualifier extends ObjectQualifierBase {
   type: "inZone";
-  zone: Zone;
+  zone: Node<Zone>;
 }
 
 export interface HasKeywordObjectQualifier extends ObjectQualifierBase {
   type: "hasKeyword";
-  keyword: Keyword;
+  keyword: Node<Keyword>;
 }
 
 export interface AttributeObjectQualifier extends ObjectQualifierBase {
   type: "attribute";
-  attribute: ObjectAttribute;
-  condition: Condition;
+  attribute: Node<ObjectAttribute>;
+  condition: Node<Condition>;
+}
+
+export interface PowerToughnessObjectQualifier extends ObjectQualifierBase {
+  type: "powerToughness";
+  power: Node<Value>;
+  toughness: Node<Value>;
 }
 
 export interface ControlledByObjectQualifier extends ObjectQualifierBase {
   type: "controlledBy";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface HasCardTypeObjectQualifier extends ObjectQualifierBase {
   type: "hasCardtype";
-  cardType: CardType;
+  cardType: Node<CardType>;
+}
+
+export interface IsColorlessObjectQualifier extends ObjectQualifierBase {
+  type: "isColorless";
+}
+
+export interface IsColoredObjectQualifier extends ObjectQualifierBase {
+  type: "isColored";
+}
+
+export interface IsMonocoloredObjectQualifier extends ObjectQualifierBase {
+  type: "isMonocolored";
+}
+
+export interface IsMuticoloredObjectQualifier extends ObjectQualifierBase {
+  type: "isMulticolored";
 }
 
 export interface HasColorObjectQualifier extends ObjectQualifierBase {
   type: "hasColor";
-  color: Color;
+  color: Node<Color>;
 }
 
 export interface HasSubtypeObjectQualifier extends ObjectQualifierBase {
   type: "hasSubtype";
-  subtype: Subtype;
+  subtype: Node<Subtype>;
 }
 
 export interface HasSupertypeObjectQualifier extends ObjectQualifierBase {
   type: "hasSupertype";
-  supertype: Supertype;
+  supertype: Node<Supertype>;
 }
 
 export interface IsTappedObjectQualifier extends ObjectQualifierBase {
   type: "isTapped";
+}
+
+export interface IsUntappedObjectQualifier extends ObjectQualifierBase {
+  type: "isUntapped";
 }
 
 export interface IsTokenObjectQualifier extends ObjectQualifierBase {
@@ -62,11 +91,19 @@ export interface IsTokenObjectQualifier extends ObjectQualifierBase {
 
 export interface NamedObjectQualifier extends ObjectQualifierBase {
   type: "named";
-  cardName: CardName;
+  cardName: Node<CardName>;
 }
 
 export interface IsSpellObjectQualifier extends ObjectQualifierBase {
   type: "isSpell";
+}
+
+export interface IsPermanentCardObjectQualifier extends ObjectQualifierBase {
+  type: "isPermanentCard";
+}
+
+export interface IsPermanentObjectQualifier extends ObjectQualifierBase {
+  type: "isPermanent";
 }
 
 export interface IsAbilityObjectQualifier extends ObjectQualifierBase {
@@ -79,13 +116,13 @@ export interface IsCardObjectQualifier extends ObjectQualifierBase {
 
 export interface OwnedByObjectQualifier extends ObjectQualifierBase {
   type: "ownedBy";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface CounterObjectQualifier extends ObjectQualifierBase {
   type: "counter";
-  counterName?: CounterName;
-  condition: Condition;
+  counterName?: Node<CounterName>;
+  condition: Node<Condition>;
 }
 
 //#endregion
@@ -94,17 +131,17 @@ export interface CounterObjectQualifier extends ObjectQualifierBase {
 
 export interface OrObjectQualifier extends ObjectQualifierBase {
   type: "or";
-  qualifiers: ObjectQualifier[];
+  qualifiers: Node<ObjectQualifier>[];
 }
 
 export interface AndObjectQualifier extends ObjectQualifierBase {
   type: "and";
-  qualifiers: ObjectQualifier[];
+  qualifiers: Node<ObjectQualifier>[];
 }
 
 export interface NotObjectQualifier extends ObjectQualifierBase {
   type: "not";
-  qualifier: ObjectQualifier;
+  qualifier: Node<ObjectQualifier>;
 }
 
 //#endregion
@@ -114,15 +151,23 @@ export interface NotObjectQualifier extends ObjectQualifierBase {
 export type ObjectQualifier = (
   HasKeywordObjectQualifier   |
   AttributeObjectQualifier    |
+  PowerToughnessObjectQualifier |
   ControlledByObjectQualifier |
   HasCardTypeObjectQualifier  |
+  IsColorlessObjectQualifier   |
+  IsColoredObjectQualifier     |
+  IsMonocoloredObjectQualifier |
+  IsMuticoloredObjectQualifier |
   HasColorObjectQualifier     |
   HasSubtypeObjectQualifier   |
   HasSupertypeObjectQualifier |
   IsTappedObjectQualifier     |
+  IsUntappedObjectQualifier   |
   IsTokenObjectQualifier      |
   NamedObjectQualifier        |
   IsSpellObjectQualifier      |
+  IsPermanentCardObjectQualifier |
+  IsPermanentObjectQualifier     |
   IsAbilityObjectQualifier    |
   OwnedByObjectQualifier      |
   CounterObjectQualifier      |

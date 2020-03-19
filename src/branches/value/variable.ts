@@ -6,6 +6,6 @@ import { parseVariable } from "@/branches/variable";
 
 export const parseVariableValue: Pattern<VariableValue> = (
   r.defer(() => parseVariable.as(
-    variable => <VariableValue>{ type: "variable", variable }
+    (_, variable) => <VariableValue>{ type: "variable", variable }
   ))
 );

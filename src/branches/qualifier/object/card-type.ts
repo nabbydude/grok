@@ -7,5 +7,5 @@ import { parseCardType } from "@/branches/card-type";
 export const parseCardTypeObjectQualifier: (
   Pattern<HasCardTypeObjectQualifier>
 ) = r.defer(() => parseCardType.as(
-  cardType => <HasCardTypeObjectQualifier>{ type: "hasCardtype", cardType }
+  (_, cardType) => <HasCardTypeObjectQualifier>{ type: "hasCardtype", cardType }
 ));

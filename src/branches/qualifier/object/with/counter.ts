@@ -11,9 +11,14 @@ export const parseCounterWithObjectQualifier: (
   Pattern<CounterObjectQualifier>
 ) = r.defer(() => r`${r.anyOf(
   parseCondition,
-  parseValue.as(value => <ComparisonCondition>{ operator: ">=", value })
+  parseValue.as((_, value) => <ComparisonCondition>{
+    type: "comparison",
+    // TODO: fix hack
+    operator: { start: value.start, end: value.end, data: ">=" },
+    value
+  })
 )} ${r.anyOf(
-  r`${parseCounterName} `.as(([counterName]) => counterName),
+  r`${parseCounterName} `.as(([counterName]) => counterName.data),
   r``.as(_ => undefined)
 )}counters? on (it|them)`.as(
   ([condition, counterName]) => <CounterObjectQualifier>{

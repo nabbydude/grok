@@ -1,3 +1,5 @@
+import { Node } from "@/reader/result";
+
 import { Condition } from "@/types/condition";
 import { ObjectQualifier } from "@/types/object-qualifier";
 
@@ -8,25 +10,25 @@ export interface EverythingScope extends ScopeBase {
   type: "everything";
 }
 
-export interface AllObjectScope extends ScopeBase {
+export interface QualifiedObjectScope extends ScopeBase {
   type: "object";
-  qualifier: ObjectQualifier;
+  qualifiers: Node<Node<ObjectQualifier>[]>[];
 }
 
 export interface TargetScope extends ScopeBase {
   type: "target";
-  amount: Condition;
-  scope: Scope;
+  amount: Node<Condition>;
+  scope: Node<Scope>;
 }
 
 export interface AndScope extends ScopeBase {
   type: "and";
-  scopes: Scope[];
+  scopes: Node<Scope>[];
 }
 
 export type Scope = (
   AndScope        |
   EverythingScope |
-  AllObjectScope  |
+  QualifiedObjectScope  |
   TargetScope
 );

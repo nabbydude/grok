@@ -1,3 +1,5 @@
+import { Node } from "@/reader/result";
+
 import { ObjectAttribute, Variable } from "@/types/general";
 import { Scope } from "@/types/scope";
 
@@ -9,15 +11,15 @@ interface ValueBase {
 
 export interface AggregateValue extends ValueBase {
   type: "aggregate";
-  aggregate: "total" | "highest" | "lowest";
-  attribute: ObjectAttribute;
-  scope: Scope;
+  aggregate: Node<"total" | "highest" | "lowest">;
+  attribute: Node<ObjectAttribute>;
+  scope: Node<Scope>;
 }
 
 export interface AttributeValue extends ValueBase {
   type: "attribute";
-  attribute: ObjectAttribute;
-  scope: Scope;
+  attribute: Node<ObjectAttribute>;
+  scope: Node<Scope>;
 }
 
 export interface ConstantValue extends ValueBase {
@@ -27,7 +29,7 @@ export interface ConstantValue extends ValueBase {
 
 export interface CountValue extends ValueBase {
   type: "count";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface ThatValue extends ValueBase {
@@ -36,7 +38,7 @@ export interface ThatValue extends ValueBase {
 
 export interface VariableValue extends ValueBase {
   type: "variable";
-  variable: Variable;
+  variable: Node<Variable>;
 }
 
 //#endregion

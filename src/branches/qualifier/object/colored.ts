@@ -1,29 +1,22 @@
 import { Pattern, r } from "@/r";
 
-import { ComparisonCondition } from "@/types/condition";
-import { AttributeObjectQualifier } from "@/types/object-qualifier";
+import { IsColoredObjectQualifier, IsColorlessObjectQualifier, IsMonocoloredObjectQualifier, IsMuticoloredObjectQualifier } from "@/types/object-qualifier";
 
-export const parseColoredObjectQualifier: Pattern<AttributeObjectQualifier> = (
-  r.anyOf(
-    r`colorless`.as(_ => <ComparisonCondition>{
-      operator: "=",
-      value: { type: "constant", value: 0 }
-    }),
-    r`colored`.as(_ => <ComparisonCondition>{
-      operator: ">",
-      value: { type: "constant", value: 0 }
-    }),
-    r`monocolored`.as(_ => <ComparisonCondition>{
-      operator: "=",
-      value: { type: "constant", value: 1 }
-    }),
-    r`multicolored`.as(_ => <ComparisonCondition>{
-      operator: ">",
-      value: { type: "constant", value: 1 }
-    })
-  ).as(condition => <AttributeObjectQualifier>{
-    type: "attribute",
-    attribute: "colors",
-    condition
-  })
+export const parseColoredObjectQualifier: Pattern<(
+  IsColorlessObjectQualifier |
+  IsColoredObjectQualifier |
+  IsMonocoloredObjectQualifier |
+  IsMuticoloredObjectQualifier
+)> = r.anyOf<(
+  IsColorlessObjectQualifier |
+  IsColoredObjectQualifier |
+  IsMonocoloredObjectQualifier |
+  IsMuticoloredObjectQualifier
+)>(
+  r`colorless`.as(_ => <IsColorlessObjectQualifier>{ type: "isColorless"}),
+  r`colored`.as(_ => <IsColoredObjectQualifier>{ type: "isColored"}),
+  // tslint:disable-next-line:max-line-length
+  r`monocolored`.as(_ => <IsMonocoloredObjectQualifier>{ type: "isMonocolored"}),
+  // tslint:disable-next-line:max-line-length
+  r`multicolored`.as(_ => <IsMuticoloredObjectQualifier>{ type: "isMulticolored"})
 );

@@ -1,3 +1,6 @@
+import { Node } from "@/reader/result";
+
+import { RoundingDirection } from "@/types/general";
 import { Scope } from "@/types/scope";
 
 export type Spread = EachSpread | DividedSpread;
@@ -6,16 +9,23 @@ export interface EachSpread {
   type: "each";
 }
 
-export type DividedSpread = EvenlyDividedSpread | ChoiceDividedSpread;
-
-export interface EvenlyDividedSpread {
+export interface DividedSpread {
   type: "divided";
-  dividedType: "evenly";
-  evenlyDirection: "up" | "down";
+  division: Node<Division>;
 }
 
-export interface ChoiceDividedSpread {
-  type: "divided";
-  dividedType: "choice";
-  by: Scope;
+interface DivisionBase {
+  type: string;
 }
+
+export interface EvenDivision extends DivisionBase {
+  type: "even";
+  roundingDirection: Node<RoundingDirection>;
+}
+
+export interface ChoiceDivision extends DivisionBase {
+  type: "choice";
+  by: Node<Scope>;
+}
+
+export type Division = EvenDivision | ChoiceDivision;

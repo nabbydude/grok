@@ -8,7 +8,8 @@ import { parseScope } from "@/branches/scope/_";
 
 export const parseEquipKeywordAbility: Pattern<EquipKeywordAbility> = (
   r.defer(() => r`equip${r.anyOf(
-    r` ${parseScope}`.as(([scope]) => scope),
+    // TODO: fix hack
+    r` ${parseScope}`.as(([scope]) => scope.data),
     r``.as(_ => <EverythingScope>{ type: "everything" })
   )}[— ]${parseCost}`.as(([scope, cost]) => <EquipKeywordAbility>{
     type: "keyword",

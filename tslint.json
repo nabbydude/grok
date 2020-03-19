@@ -82,7 +82,7 @@
     "binary-expression-operand-order": true,
     "callable-types": true,
     "class-name": true,
-    "comment-format": [true, "check-space", "check-lowercase"],
+    "comment-format": [true, "check-space"],
     "encoding": true,
     "interface-over-type-literal": true,
     "newline-before-return": true,

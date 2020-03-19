@@ -1,4 +1,4 @@
-import { Result } from "@/reader/result";
+import { Node } from "@/reader/result";
 
 import { Pattern } from "@/reader/pattern/_";
 
@@ -9,14 +9,11 @@ export class RegExpPattern extends Pattern<RegExpExecArray> {
     this.regExp = new RegExp(regExp, regExp.flags + "y");
   }
 
-  public exec(str: string, index: number): Result<RegExpExecArray> {
+  public exec(str: string, index: number): Node<RegExpExecArray> | undefined {
     this.regExp.lastIndex = index;
-    const payload = this.regExp.exec(str);
+    const data = this.regExp.exec(str);
 
-    return payload ? (
-      { success: true, end: this.regExp.lastIndex, payload }
-     ) : (
-      { success: false }
-     );
+    // tslint:disable-next-line:max-line-length
+    return data ? { start: index, end: this.regExp.lastIndex, data } : undefined;
   }
 }

@@ -14,6 +14,8 @@ export const parseCost: Pattern<Cost> = r.defer(() => r.many(
       parseTapCost
     ),
     r`, `
-  ).as(costs => costs.length > 1 ? <AndCost>{ type: "and", costs } : costs[0]),
+  // tslint:disable-next-line:max-line-length
+  ).as(costs => costs.length > 1 ? <AndCost>{ type: "and", costs } : costs[0].data),
   r`,? or `
-).as(costs => costs.length > 1 ? <OrCost>{ type: "or", costs } : costs[0]));
+// tslint:disable-next-line:max-line-length
+).as(costs => costs.length > 1 ? <OrCost>{ type: "or", costs } : costs[0].data));

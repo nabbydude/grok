@@ -10,7 +10,8 @@ import { parseEffect } from "@/branches/effect/_";
 export const parseActivatedAbility: Pattern<ActivatedAbility> = (
   r.defer(() => r`${parseCost}: ${parseEffect}.${r.anyOf(
     r` ${parseActivationInstructions}`.as(
-      ([activationInstructions]) => activationInstructions
+      // TODO: fix hack
+      ([activationInstructions]) => activationInstructions.data
     ),
     r``.as(_ => <NoneActivationInstructions>{ type: "none" })
   )}`.as(([cost, effect, instructions]) => <ActivatedAbility> {

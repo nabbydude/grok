@@ -1,4 +1,4 @@
-import { Result } from "@/reader/result";
+import { Node } from "@/reader/result";
 
 import { Pattern } from "@/reader/pattern/_";
 
@@ -12,10 +12,10 @@ export class ConditionalPattern<T> extends Pattern<T> {
     this.condition = condition;
   }
 
-  public exec(str: string, index: number): Result<T> {
+  public exec(str: string, index: number): Node<T> | undefined {
     const res = this.pattern.exec(str, index);
-    if (!res.success) return res;
+    if (!res) return; // failure
 
-    return this.condition(res.payload) ? res : { success: false };
+    return this.condition(res.data) ? res : undefined;
   }
 }

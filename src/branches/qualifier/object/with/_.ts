@@ -1,4 +1,5 @@
 import { Pattern, r } from "@/r";
+import { Node } from "@/reader/result";
 
 import { ObjectQualifier } from "@/types/object-qualifier";
 
@@ -6,7 +7,7 @@ import { parseAttributeWithObjectQualifier } from "@/branches/qualifier/object/w
 import { parseCounterWithObjectQualifier   } from "@/branches/qualifier/object/with/counter";
 import { parseKeywordWithObjectQualifier   } from "@/branches/qualifier/object/with/keyword";
 
-export const parseWithObjectQualifier: Pattern<ObjectQualifier[]> = (
+export const parseWithObjectQualifier: Pattern<Node<ObjectQualifier>[]> = (
   r.defer(() => r`with ${r.list<ObjectQualifier>(
     [
       parseAttributeWithObjectQualifier,
@@ -15,5 +16,5 @@ export const parseWithObjectQualifier: Pattern<ObjectQualifier[]> = (
     ],
     r`, `,
     r`,? and `
-  )}`.as(([qualifiers]) => qualifiers))
+  )}`.as(([qualifiers]) => qualifiers.data))
 );

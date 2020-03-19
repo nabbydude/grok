@@ -1,15 +1,6 @@
-interface ResultBase {
-  success: boolean;
-}
 
-interface SuccessfulResult<T = unknown> extends ResultBase {
-  success: true;
+export interface Node<T = unknown> {
+  start: number;
   end: number;
-  payload: T;
+  data: T;
 }
-
-interface FailedResult extends ResultBase {
-  success: false;
-}
-
-export type Result<T = unknown> = SuccessfulResult<T> | FailedResult;

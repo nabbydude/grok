@@ -1,3 +1,5 @@
+import { Node } from "@/reader/result";
+
 import { ActivationInstructions } from "@/types/activation-instructions";
 import { Cost } from "@/types/cost";
 import { Effect } from "@/types/effect";
@@ -15,19 +17,19 @@ interface AbilityBase {
 
 export interface ActivatedAbility extends AbilityBase {
   type: "activated";
-  cost: Cost;
-  effect: Effect;
-  instructions: ActivationInstructions;
+  cost: Node<Cost>;
+  effect: Node<Effect>;
+  instructions: Node<ActivationInstructions>;
 }
 
 export interface SpellAbility extends AbilityBase {
   type: "spell";
-  effect: Effect;
+  effect: Node<Effect>;
 }
 
 export interface StaticAbility extends AbilityBase {
   type: "static";
-  state: State;
+  state: Node<State>;
 }
 
 interface KeywordAbilityBase extends AbilityBase {
@@ -95,12 +97,12 @@ export interface VigilanceKeywordAbility extends KeywordAbilityBase {
 
 export interface RampageKeywordAbility extends KeywordAbilityBase {
   keyword: "rampage";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface FlankingKeywordAbility extends KeywordAbilityBase {
   keyword: "flanking";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface PhasingKeywordAbility extends KeywordAbilityBase {
@@ -297,326 +299,326 @@ export interface MeleeKeywordAbility extends KeywordAbilityBase {
 
 export interface EquipKeywordAbility extends KeywordAbilityBase {
   keyword: "equip";
-  cost: Cost;
-  scope: Scope;
+  cost: Node<Cost>;
+  scope: Node<Scope>;
 }
 
 export interface CumulativeUpkeepKeywordAbility extends KeywordAbilityBase {
   keyword: "cumulativeUpkeep";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface BuybackKeywordAbility extends KeywordAbilityBase {
   keyword: "buyback";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface CyclingKeywordAbility extends KeywordAbilityBase {
   keyword: "cycling";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EchoKeywordAbility extends KeywordAbilityBase {
   keyword: "echo";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface KickerKeywordAbility extends KeywordAbilityBase {
   keyword: "kicker";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface FlashbackKeywordAbility extends KeywordAbilityBase {
   keyword: "flashback";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface MadnessKeywordAbility extends KeywordAbilityBase {
   keyword: "madness";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface MorphKeywordAbility extends KeywordAbilityBase {
   keyword: "morph";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EntwineKeywordAbility extends KeywordAbilityBase {
   keyword: "entwine";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface NinjutsuKeywordAbility extends KeywordAbilityBase {
   keyword: "ninjutsu";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface TransmuteKeywordAbility extends KeywordAbilityBase {
   keyword: "transmute";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface ReplicateKeywordAbility extends KeywordAbilityBase {
   keyword: "replicate";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface RecoverKeywordAbility extends KeywordAbilityBase {
   keyword: "recover";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface SuspendKeywordAbility extends KeywordAbilityBase {
   keyword: "suspend";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface AuraSwapKeywordAbility extends KeywordAbilityBase {
   keyword: "auraSwap";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface FortifyKeywordAbility extends KeywordAbilityBase {
   keyword: "fortify";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface TransfigureKeywordAbility extends KeywordAbilityBase {
   keyword: "transfigure";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EvokeKeywordAbility extends KeywordAbilityBase {
   keyword: "evoke";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface ProwlKeywordAbility extends KeywordAbilityBase {
   keyword: "prowl";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface UnearthKeywordAbility extends KeywordAbilityBase {
   keyword: "unearth";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface LevelUpKeywordAbility extends KeywordAbilityBase {
   keyword: "levelUp";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface MiracleKeywordAbility extends KeywordAbilityBase {
   keyword: "miracle";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface OverloadKeywordAbility extends KeywordAbilityBase {
   keyword: "overload";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface ScavengeKeywordAbility extends KeywordAbilityBase {
   keyword: "scavenge";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface BestowKeywordAbility extends KeywordAbilityBase {
   keyword: "bestow";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface OutlastKeywordAbility extends KeywordAbilityBase {
   keyword: "outlast";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface DashKeywordAbility extends KeywordAbilityBase {
   keyword: "dash";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface AwakenKeywordAbility extends KeywordAbilityBase {
   keyword: "awaken";
-  value: Value;
-  cost: Cost;
+  value: Node<Value>;
+  cost: Node<Cost>;
 }
 
 export interface SurgeKeywordAbility extends KeywordAbilityBase {
   keyword: "surge";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EmergeKeywordAbility extends KeywordAbilityBase {
   keyword: "emerge";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EscalateKeywordAbility extends KeywordAbilityBase {
   keyword: "escalate";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EmbalmKeywordAbility extends KeywordAbilityBase {
   keyword: "embalm";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface EternalizeKeywordAbility extends KeywordAbilityBase {
   keyword: "eternalize";
-  cost: Cost;
+  cost: Node<Cost>;
 }
 
 export interface FadingKeywordAbility extends KeywordAbilityBase {
   keyword: "fading";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface AmplifyKeywordAbility extends KeywordAbilityBase {
   keyword: "amplify";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface ModularKeywordAbility extends KeywordAbilityBase {
   keyword: "modular";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface SoulshiftKeywordAbility extends KeywordAbilityBase {
   keyword: "soulshift";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface DredgeKeywordAbility extends KeywordAbilityBase {
   keyword: "dredge";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface BloodthirstKeywordAbility extends KeywordAbilityBase {
   keyword: "bloodthirst";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface GraftKeywordAbility extends KeywordAbilityBase {
   keyword: "graft";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface RippleKeywordAbility extends KeywordAbilityBase {
   keyword: "ripple";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface VanishingKeywordAbility extends KeywordAbilityBase {
   keyword: "vanishing";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface AbsorbKeywordAbility extends KeywordAbilityBase {
   keyword: "absorb";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface FrenzyKeywordAbility extends KeywordAbilityBase {
   keyword: "frenzy";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface PoisonousKeywordAbility extends KeywordAbilityBase {
   keyword: "poisonous";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface DevourKeywordAbility extends KeywordAbilityBase {
   keyword: "devour";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface AnnihilatorKeywordAbility extends KeywordAbilityBase {
   keyword: "annihilator";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface TributeKeywordAbility extends KeywordAbilityBase {
   keyword: "tribute";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface RenownKeywordAbility extends KeywordAbilityBase {
   keyword: "renown";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface CrewKeywordAbility extends KeywordAbilityBase {
   keyword: "crew";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface FabricateKeywordAbility extends KeywordAbilityBase {
   keyword: "fabricate";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface AfflictKeywordAbility extends KeywordAbilityBase {
   keyword: "afflict";
-  value: Value;
+  value: Node<Value>;
 }
 
 export interface HexproofKeywordAbility extends KeywordAbilityBase {
   keyword: "hexproof";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface ReinforceKeywordAbility extends KeywordAbilityBase {
   keyword: "reinforce";
-  value: Value;
-  cost: Cost;
+  value: Node<Value>;
+  cost: Node<Cost>;
 }
 
 export interface EnchantKeywordAbility extends KeywordAbilityBase {
   keyword: "enchant";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface AffinityKeywordAbility extends KeywordAbilityBase {
   keyword: "affinity";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface LandwalkKeywordAbility extends KeywordAbilityBase {
   keyword: "landwalk";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface SpliceKeywordAbility extends KeywordAbilityBase {
   keyword: "splice";
-  scope: Scope;
-  cost: Cost;
+  scope: Node<Scope>;
+  cost: Node<Cost>;
 }
 
 export interface OfferingKeywordAbility extends KeywordAbilityBase {
   keyword: "offering";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface ForecastKeywordAbility extends KeywordAbilityBase {
   keyword: "forecast";
-  ability: ActivatedAbility;
+  ability: Node<ActivatedAbility>;
 }
 
 export interface ProtectionKeywordAbility extends KeywordAbilityBase {
   keyword: "protection";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface BandingKeywordAbility extends KeywordAbilityBase {
   keyword: "banding";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 export interface ChampionKeywordAbility extends KeywordAbilityBase {
   keyword: "champion";
-  scope: Scope;
+  scope: Node<Scope>;
 }
 
 //#endregion

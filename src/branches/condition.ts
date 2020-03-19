@@ -1,6 +1,6 @@
 import { Pattern, r } from "@/r";
 
-import { ComparisonCondition, Condition, InCondition } from "@/types/condition";
+import { AnyCondition, ComparisonCondition, Condition, InCondition } from "@/types/condition";
 
 import { parseValue } from "@/branches/value/_";
 
@@ -19,14 +19,11 @@ export const parseCondition: Pattern<Condition> = (
       r`less|fewer`.as(_ => <"<=">"<="),
       r`greater|more`.as(_ => <">=">">=")
     )}`.as(([value, operator]) => <ComparisonCondition>{ operator, value }),
-    r`any number of`.as(_ => <ComparisonCondition>{
-      operator: ">=",
-      value: { type: "constant", value: 0 }
-    }),
+    r`any number of`.as(_ => <AnyCondition>{ type: "any" }),
     r.many(parseValue, r`, `, r`,? or `).onlyIf(
       values => values.length > 1
     ).as(
-      values => <InCondition>{ operator: "in", values }
+      values => <InCondition>{ type: "in", values }
     )
   ))
 );

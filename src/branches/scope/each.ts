@@ -8,4 +8,4 @@ export const parseEachScope: Pattern<AndScope> = r.defer(() => r`each ${r.many(
   parseObjectScope,
   r`, `,
   r`,? or `
-)}`.as(([scopes]) => <AndScope>{ type: "and", scopes }));
+)}`.as(([scopes]) => <AndScope>{ type: "and", scopes: scopes.data }));

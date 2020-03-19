@@ -1,27 +1,12 @@
 import { Pattern, r } from "@/r";
 
-import { AndObjectQualifier, AttributeObjectQualifier } from "@/types/object-qualifier";
+import { PowerToughnessObjectQualifier } from "@/types/object-qualifier";
 
-export const parsePowerToughnessObjectQualifier: Pattern<AndObjectQualifier> = (
-  r.reg(/(\d+)\/(\d+)/).as(([_, power, toughness]) => <AndObjectQualifier>{
-    type: "and",
-    qualifiers: [
-      <AttributeObjectQualifier>{
-        type: "attribute",
-        attribute: "power",
-        condition: {
-          operator: "=",
-          value: { type: "constant", value: Number(power) }
-        }
-      },
-      <AttributeObjectQualifier>{
-        type: "attribute",
-        attribute: "toughness",
-        condition: {
-          operator: "=",
-          value: { type: "constant", value: Number(toughness) }
-        }
-      }
-    ]
-  })
+import { parseConstantValue } from "@/branches/value/constant";
+
+// tslint:disable-next-line:max-line-length
+export const parsePowerToughnessObjectQualifier: Pattern<PowerToughnessObjectQualifier> = (
+  r`${parseConstantValue}/${parseConstantValue}`.as(([power, toughness]) => (
+  <PowerToughnessObjectQualifier>{ type: "powerToughness", power, toughness }
+  ))
 );

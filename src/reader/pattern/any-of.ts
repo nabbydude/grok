@@ -1,4 +1,4 @@
-import { Result } from "@/reader/result";
+import { Node } from "@/reader/result";
 
 import { Pattern } from "@/reader/pattern/_";
 
@@ -10,12 +10,12 @@ export class AnyOfPattern<T> extends Pattern<T> {
     this.patterns = patterns;
   }
 
-  public exec(str: string, index: number): Result<T> {
+  public exec(str: string, index: number): Node<T> | undefined {
     for (const p of this.patterns) {
       const res = p.exec(str, index);
-      if (res.success) return res;
+      if (res) return res;
     }
 
-    return { success: false };
+    return; // failure
   }
 }

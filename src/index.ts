@@ -3,9 +3,9 @@ import { readFileSync, writeFileSync } from "fs";
 import { InputCard } from "@/types/input";
 
 import { parseCard } from "@/branches/card/_";
-import { Result } from "@/reader/result";
+import { Node } from "@/reader/result";
 
-const output: (Result & { name: string; })[] = [];
+const output: (Node & { name: string; })[] = [];
 const results: [number, number] = [0, 0];
 
 const IN_FILE_INDEX = 2;
@@ -29,12 +29,12 @@ function parseBatch(cards: InputCard[]) {
 
     if (log.length < LINE_LENGTH) log += ".".repeat(LINE_LENGTH - log.length);
 
-    log += res.success ? "....Y" : "N";
+    log += res ? "....Y" : "N";
     // tslint:disable-next-line:no-console
     console.log(log);
 
-    results[+res.success]++;
-    output.push({ name: cards[i].imageName, ...res });
+    results[res ? 1 : 0]++;
+    if (res) output.push({ name: cards[i].imageName, ...res });
   }
 
   writeFileSync(

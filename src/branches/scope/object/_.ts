@@ -1,7 +1,8 @@
 import { Pattern, r } from "@/r";
+import { Node } from "@/reader/result";
 
 import { ObjectQualifier } from "@/types/object-qualifier";
-import { AllObjectScope } from "@/types/scope";
+import { QualifiedObjectScope } from "@/types/scope";
 
 import { parseCardTypeObjectQualifier } from "@/branches/qualifier/object/card-type";
 import { parseColorObjectQualifier } from "@/branches/qualifier/object/color";
@@ -13,13 +14,13 @@ import { parseTappedObjectQualifier } from "@/branches/qualifier/object/tapped";
 import { parseTokenObjectQualifier } from "@/branches/qualifier/object/token";
 import { parseWithObjectQualifier } from "@/branches/qualifier/object/with/_";
 
-export const parseObjectScope: Pattern<AllObjectScope> = (
-  r.defer(() => r.list<ObjectQualifier[]>(
+export const parseObjectScope: Pattern<QualifiedObjectScope> = (
+  r.defer(() => r.list<Node<ObjectQualifier>[]>(
     [
-      parseTappedObjectQualifier.as(qualifier => [qualifier]),
-      parseTokenObjectQualifier.as(qualifier => [qualifier]),
-      r.anyOf<ObjectQualifier[]>(
-        parseColoredObjectQualifier.as(qualifier => [qualifier]),
+      parseTappedObjectQualifier.as((_, qualifier) => [qualifier]),
+      parseTokenObjectQualifier.as((_, qualifier) => [qualifier]),
+      r.anyOf<Node<ObjectQualifier>[]>(
+        parseColoredObjectQualifier.as((_, qualifier) => [qualifier]),
         r.many(parseColorObjectQualifier, r` `)
       ),
       r.many(parseNonObjectQualifier, r`, `),
@@ -30,15 +31,10 @@ export const parseObjectScope: Pattern<AllObjectScope> = (
     ],
     r` `
   ).as(qualifiers => {
-    const flattenedQualifiers = qualifiers.reduce((a, v) => [...a, ...v]);
 
-    return <AllObjectScope>{
+    return <QualifiedObjectScope>{
       type: "object",
-      qualifier: flattenedQualifiers.length > 1 ? (
-        { type: "and", qualifiers: flattenedQualifiers }
-      ) : (
-        flattenedQualifiers[0]
-      )
+      qualifiers
     };
   }))
 );

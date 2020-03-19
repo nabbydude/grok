@@ -6,7 +6,8 @@ import { parseSupertype } from "@/branches/supertype";
 
 export const parseSupertypeObjectQualifier: (
   Pattern<HasSupertypeObjectQualifier>
-) = r.defer(() => parseSupertype.as(supertype => <HasSupertypeObjectQualifier>{
+// tslint:disable-next-line:max-line-length
+) = r.defer(() => parseSupertype.as((_, supertype) => <HasSupertypeObjectQualifier>{
   type: "hasSupertype",
   supertype
 }));

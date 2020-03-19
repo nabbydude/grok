@@ -1,10 +1,10 @@
-import { Result } from "@/reader/result";
+import { Node } from "@/reader/result";
 
 export class Pattern<T = unknown> {
-  public exec(str: string, index: number): Result<T> {
-    return { success: false };
+  public exec(str: string, index: number): Node<T> | undefined {
+    return; // failure
   }
-  public as<U>(mapper: (handles: T) => U): Pattern<U> {
+  public as<U>(mapper: (handles: T, node: Node<T>) => U): Pattern<U> {
     return new MappedPattern(this, mapper);
   }
 

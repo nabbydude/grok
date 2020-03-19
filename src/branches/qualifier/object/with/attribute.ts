@@ -14,7 +14,12 @@ export const parseAttributeWithObjectQualifier: (
   r`toughness`.as(_ => <"toughness">"toughness")
 )} ${r.anyOf(
     parseCondition,
-    parseValue.as(value => <ComparisonCondition>{ operator: "=", value })
+    parseValue.as((_, value) => <ComparisonCondition>{
+      type: "comparison",
+      // TODO: fix hack
+      operator: { start: value.start, end: value.end, data: ">=" },
+      value
+    })
 )}`.as(([attribute, condition]) => <AttributeObjectQualifier>{
   type: "attribute",
   attribute,
