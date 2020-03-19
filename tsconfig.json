@@ -6,6 +6,7 @@
     "types": ["node"],
     "module": "commonjs",
     "baseUrl": "./src",
+    "sourceMap": true,
     "paths": {
       "@/*": [
         "*"
