@@ -6,7 +6,7 @@ import { parseCard } from "@/branches/card/_";
 import { Node } from "@/reader/result";
 
 const output: (Node & { name: string; })[] = [];
-const results: [number, number] = [0, 0];
+const results = { successes: 0, failures: 0, partials: 0 };
 
 const IN_FILE_INDEX = 2;
 const IN_FILE = process.argv[IN_FILE_INDEX];
@@ -29,11 +29,22 @@ function parseBatch(cards: InputCard[]) {
 
     if (log.length < LINE_LENGTH) log += ".".repeat(LINE_LENGTH - log.length);
 
-    log += res ? "....Y" : "N";
-    // tslint:disable-next-line:no-console
-    console.log(log);
+    if (!res) {
+      results.failures++;
+      log += "N";
+    }
+    else if (res.end !== cards[i].text.length) {
+      results.partials++;
+      log += "..P";
+    }
+    else {
+      results.successes++;
+      log += "....Y";
+    }
 
-    results[res ? 1 : 0]++;
+    // tslint:disable-next-line:no-console
+     console.log(log);
+
     if (res) output.push({ name: cards[i].imageName, ...res });
   }
 
@@ -45,11 +56,13 @@ function parseBatch(cards: InputCard[]) {
   // tslint:disable-next-line:no-console
   console.log(
     `parsing complete, ${
-      results[1]
+      results.successes
     } successes, ${
-      results[0]
+      results.partials
+    } partials, ${
+      results.failures
      } falures. (${
-       results[1] / cards.length * PERCENTAGE_MULT
+       results.successes / cards.length * PERCENTAGE_MULT
      }%)`
   );
 }
